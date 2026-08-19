@@ -1,0 +1,1092 @@
+{
+  "metadata": {
+    "symbols": [
+      "BTC-USDC",
+      "ETH-USDC",
+      "SOL-USDC"
+    ],
+    "timeframes": [
+      "5m",
+      "15m",
+      "1H",
+      "4H"
+    ],
+    "bars_per_dataset": 2000,
+    "capital_per_dataset": 500.0,
+    "fee_bps_per_side": 8.0,
+    "train_ratio": 0.6,
+    "atr_stop_grid": [
+      1.0,
+      1.2,
+      1.5,
+      2.0
+    ],
+    "take_profit_pct_grid": [
+      1.4,
+      1.8,
+      2.2
+    ],
+    "warning": "Datasets and outcomes are research evidence only; no real-order action is implied."
+  },
+  "results": [
+    {
+      "timeframe": "5m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1785880800000",
+        "to": "1786240500000"
+      },
+      "test_period": {
+        "from": "1786240800000",
+        "to": "1786480500000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "BTC-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_5m_2000.csv"
+    },
+    {
+      "timeframe": "15m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1784680200000",
+        "to": "1785759300000"
+      },
+      "test_period": {
+        "from": "1785760200000",
+        "to": "1786479300000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "BTC-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_15m_2000.csv"
+    },
+    {
+      "timeframe": "1H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1779292800000",
+        "to": "1783609200000"
+      },
+      "test_period": {
+        "from": "1783612800000",
+        "to": "1786489200000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 7,
+            "net_pnl_usdc": 0.3,
+            "return_pct": 0.06,
+            "final_equity": 500.3,
+            "max_drawdown_pct": 0.57,
+            "winrate_pct": 42.86,
+            "profit_factor": 1.071,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 3,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 9,
+            "net_pnl_usdc": -0.33,
+            "return_pct": -0.07,
+            "final_equity": 499.67,
+            "max_drawdown_pct": 0.45,
+            "winrate_pct": 33.33,
+            "profit_factor": 0.918,
+            "exit_reasons": {
+              "SL": 6,
+              "TP": 3,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 8,
+            "net_pnl_usdc": -0.56,
+            "return_pct": -0.11,
+            "final_equity": 499.44,
+            "max_drawdown_pct": 0.58,
+            "winrate_pct": 50.0,
+            "profit_factor": 0.868,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 4,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "BTC-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_1H_2000.csv"
+    },
+    {
+      "timeframe": "4H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1757692800000",
+        "to": "1774958400000"
+      },
+      "test_period": {
+        "from": "1774972800000",
+        "to": "1786478400000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": -2.39,
+            "return_pct": -0.48,
+            "final_equity": 497.61,
+            "max_drawdown_pct": 1.26,
+            "winrate_pct": 43.75,
+            "profit_factor": 0.73,
+            "exit_reasons": {
+              "SL": 7,
+              "TP": 7,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 15,
+            "net_pnl_usdc": -3.56,
+            "return_pct": -0.71,
+            "final_equity": 496.44,
+            "max_drawdown_pct": 1.48,
+            "winrate_pct": 33.33,
+            "profit_factor": 0.631,
+            "exit_reasons": {
+              "SL": 8,
+              "TP": 5,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": -3.62,
+            "return_pct": -0.72,
+            "final_equity": 496.38,
+            "max_drawdown_pct": 1.5,
+            "winrate_pct": 43.75,
+            "profit_factor": 0.64,
+            "exit_reasons": {
+              "SL": 7,
+              "TP": 7,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "BTC-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_4H_2000.csv"
+    },
+    {
+      "timeframe": "5m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1785893100000",
+        "to": "1786252800000"
+      },
+      "test_period": {
+        "from": "1786253100000",
+        "to": "1786492800000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "ETH-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_5m_2000.csv"
+    },
+    {
+      "timeframe": "15m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1784692800000",
+        "to": "1785771900000"
+      },
+      "test_period": {
+        "from": "1785772800000",
+        "to": "1786491900000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 5,
+            "net_pnl_usdc": -0.15,
+            "return_pct": -0.03,
+            "final_equity": 499.85,
+            "max_drawdown_pct": 0.37,
+            "winrate_pct": 20.0,
+            "profit_factor": 0.891,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 1,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 5,
+            "net_pnl_usdc": -0.33,
+            "return_pct": -0.07,
+            "final_equity": 499.67,
+            "max_drawdown_pct": 0.41,
+            "winrate_pct": 20.0,
+            "profit_factor": 0.788,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 1,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 5,
+            "net_pnl_usdc": -0.45,
+            "return_pct": -0.09,
+            "final_equity": 499.55,
+            "max_drawdown_pct": 0.37,
+            "winrate_pct": 20.0,
+            "profit_factor": 0.674,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 1,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "ETH-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_15m_2000.csv"
+    },
+    {
+      "timeframe": "1H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1779292800000",
+        "to": "1783609200000"
+      },
+      "test_period": {
+        "from": "1783612800000",
+        "to": "1786489200000"
+      },
+      "candidate_count": 12,
+      "selection": {
+        "atr_stop": 1.0,
+        "take_profit_pct": 1.8,
+        "train": {
+          "trades": 11,
+          "net_pnl_usdc": 1.9,
+          "return_pct": 0.38,
+          "final_equity": 501.9,
+          "max_drawdown_pct": 0.91,
+          "winrate_pct": 45.45,
+          "profit_factor": 1.446,
+          "exit_reasons": {
+            "SL": 5,
+            "TP": 5,
+            "SIGNAL": 1,
+            "EOD": 0
+          }
+        },
+        "test": {
+          "trades": 6,
+          "net_pnl_usdc": -3.38,
+          "return_pct": -0.68,
+          "final_equity": 496.62,
+          "max_drawdown_pct": 0.68,
+          "winrate_pct": 0.0,
+          "profit_factor": 0.0,
+          "exit_reasons": {
+            "SL": 6,
+            "TP": 0,
+            "SIGNAL": 0,
+            "EOD": 0
+          }
+        }
+      },
+      "status": "rejected_out_of_sample",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 11,
+            "net_pnl_usdc": 1.9,
+            "return_pct": 0.38,
+            "final_equity": 501.9,
+            "max_drawdown_pct": 0.91,
+            "winrate_pct": 45.45,
+            "profit_factor": 1.446,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 5,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 12,
+            "net_pnl_usdc": 1.33,
+            "return_pct": 0.27,
+            "final_equity": 501.33,
+            "max_drawdown_pct": 1.03,
+            "winrate_pct": 50.0,
+            "profit_factor": 1.312,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 6,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 11,
+            "net_pnl_usdc": 1.28,
+            "return_pct": 0.26,
+            "final_equity": 501.28,
+            "max_drawdown_pct": 1.03,
+            "winrate_pct": 45.45,
+            "profit_factor": 1.263,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 5,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        }
+      ],
+      "symbol": "ETH-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_1H_2000.csv"
+    },
+    {
+      "timeframe": "4H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1757692800000",
+        "to": "1774958400000"
+      },
+      "test_period": {
+        "from": "1774972800000",
+        "to": "1786478400000"
+      },
+      "candidate_count": 12,
+      "selection": {
+        "atr_stop": 1.0,
+        "take_profit_pct": 1.8,
+        "train": {
+          "trades": 16,
+          "net_pnl_usdc": 4.49,
+          "return_pct": 0.9,
+          "final_equity": 504.49,
+          "max_drawdown_pct": 1.0,
+          "winrate_pct": 68.75,
+          "profit_factor": 1.568,
+          "exit_reasons": {
+            "SL": 5,
+            "TP": 10,
+            "SIGNAL": 1,
+            "EOD": 0
+          }
+        },
+        "test": {
+          "trades": 18,
+          "net_pnl_usdc": -11.41,
+          "return_pct": -2.28,
+          "final_equity": 488.59,
+          "max_drawdown_pct": 2.92,
+          "winrate_pct": 22.22,
+          "profit_factor": 0.3,
+          "exit_reasons": {
+            "SL": 13,
+            "TP": 4,
+            "SIGNAL": 1,
+            "EOD": 0
+          }
+        }
+      },
+      "status": "rejected_out_of_sample",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": 4.49,
+            "return_pct": 0.9,
+            "final_equity": 504.49,
+            "max_drawdown_pct": 1.0,
+            "winrate_pct": 68.75,
+            "profit_factor": 1.568,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 10,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": 3.02,
+            "return_pct": 0.6,
+            "final_equity": 503.02,
+            "max_drawdown_pct": 1.0,
+            "winrate_pct": 68.75,
+            "profit_factor": 1.323,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 10,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": 1.48,
+            "return_pct": 0.3,
+            "final_equity": 501.48,
+            "max_drawdown_pct": 1.12,
+            "winrate_pct": 68.75,
+            "profit_factor": 1.188,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 10,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        }
+      ],
+      "symbol": "ETH-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_4H_2000.csv"
+    },
+    {
+      "timeframe": "5m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1785893100000",
+        "to": "1786253100000"
+      },
+      "test_period": {
+        "from": "1786253400000",
+        "to": "1786493100000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "SOL-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_5m_2000.csv"
+    },
+    {
+      "timeframe": "15m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1784692800000",
+        "to": "1785771900000"
+      },
+      "test_period": {
+        "from": "1785772800000",
+        "to": "1786491900000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 4,
+            "net_pnl_usdc": -1.47,
+            "return_pct": -0.29,
+            "final_equity": 498.53,
+            "max_drawdown_pct": 0.36,
+            "winrate_pct": 0.0,
+            "profit_factor": 0.0,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 4,
+            "net_pnl_usdc": -1.47,
+            "return_pct": -0.29,
+            "final_equity": 498.53,
+            "max_drawdown_pct": 0.36,
+            "winrate_pct": 0.0,
+            "profit_factor": 0.0,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 4,
+            "net_pnl_usdc": -1.47,
+            "return_pct": -0.29,
+            "final_equity": 498.53,
+            "max_drawdown_pct": 0.36,
+            "winrate_pct": 0.0,
+            "profit_factor": 0.0,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "SOL-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_15m_2000.csv"
+    },
+    {
+      "timeframe": "1H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1779292800000",
+        "to": "1783609200000"
+      },
+      "test_period": {
+        "from": "1783612800000",
+        "to": "1786489200000"
+      },
+      "candidate_count": 12,
+      "selection": {
+        "atr_stop": 2.0,
+        "take_profit_pct": 1.8,
+        "train": {
+          "trades": 18,
+          "net_pnl_usdc": 9.8,
+          "return_pct": 1.96,
+          "final_equity": 509.8,
+          "max_drawdown_pct": 0.61,
+          "winrate_pct": 72.22,
+          "profit_factor": 2.558,
+          "exit_reasons": {
+            "SL": 4,
+            "TP": 13,
+            "SIGNAL": 1,
+            "EOD": 0
+          }
+        },
+        "test": {
+          "trades": 6,
+          "net_pnl_usdc": 0.24,
+          "return_pct": 0.05,
+          "final_equity": 500.24,
+          "max_drawdown_pct": 0.63,
+          "winrate_pct": 50.0,
+          "profit_factor": 1.1,
+          "exit_reasons": {
+            "SL": 3,
+            "TP": 2,
+            "SIGNAL": 1,
+            "EOD": 0
+          }
+        }
+      },
+      "status": "accepted_for_paper_research",
+      "top_train_candidates": [
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 18,
+            "net_pnl_usdc": 9.8,
+            "return_pct": 1.96,
+            "final_equity": 509.8,
+            "max_drawdown_pct": 0.61,
+            "winrate_pct": 72.22,
+            "profit_factor": 2.558,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 13,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 23,
+            "net_pnl_usdc": 6.49,
+            "return_pct": 1.3,
+            "final_equity": 506.49,
+            "max_drawdown_pct": 0.97,
+            "winrate_pct": 52.17,
+            "profit_factor": 1.78,
+            "exit_reasons": {
+              "SL": 11,
+              "TP": 12,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        },
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 19,
+            "net_pnl_usdc": 5.72,
+            "return_pct": 1.14,
+            "final_equity": 505.72,
+            "max_drawdown_pct": 0.85,
+            "winrate_pct": 73.68,
+            "profit_factor": 1.782,
+            "exit_reasons": {
+              "SL": 5,
+              "TP": 14,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": true
+        }
+      ],
+      "symbol": "SOL-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_1H_2000.csv"
+    },
+    {
+      "timeframe": "4H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1757692800000",
+        "to": "1774958400000"
+      },
+      "test_period": {
+        "from": "1774972800000",
+        "to": "1786478400000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 28,
+            "net_pnl_usdc": -1.17,
+            "return_pct": -0.23,
+            "final_equity": 498.83,
+            "max_drawdown_pct": 1.71,
+            "winrate_pct": 53.57,
+            "profit_factor": 0.94,
+            "exit_reasons": {
+              "SL": 12,
+              "TP": 15,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 26,
+            "net_pnl_usdc": -3.14,
+            "return_pct": -0.63,
+            "final_equity": 496.86,
+            "max_drawdown_pct": 1.65,
+            "winrate_pct": 46.15,
+            "profit_factor": 0.853,
+            "exit_reasons": {
+              "SL": 13,
+              "TP": 12,
+              "SIGNAL": 1,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 27,
+            "net_pnl_usdc": -3.52,
+            "return_pct": -0.7,
+            "final_equity": 496.48,
+            "max_drawdown_pct": 2.17,
+            "winrate_pct": 70.37,
+            "profit_factor": 0.832,
+            "exit_reasons": {
+              "SL": 6,
+              "TP": 19,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ],
+      "symbol": "SOL-USDC",
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_4H_2000.csv"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+symbol,timeframe,status,train_bars,test_bars,atr_stop,take_profit_pct,train_pnl_usdc,test_pnl_usdc,test_profit_factor,test_max_drawdown_pct
+BTC-USDC,5m,rejected_insufficient_train_evidence,1200,800,,,,,,
+BTC-USDC,15m,rejected_insufficient_train_evidence,1200,800,,,,,,
+BTC-USDC,1H,rejected_insufficient_train_evidence,1200,800,,,,,,
+BTC-USDC,4H,rejected_insufficient_train_evidence,1200,800,,,,,,
+ETH-USDC,5m,rejected_insufficient_train_evidence,1200,800,,,,,,
+ETH-USDC,15m,rejected_insufficient_train_evidence,1200,800,,,,,,
+ETH-USDC,1H,rejected_out_of_sample,1200,800,1.0,1.8,1.9,-3.38,0.0,0.68
+ETH-USDC,4H,rejected_out_of_sample,1200,800,1.0,1.8,4.49,-11.41,0.3,2.92
+SOL-USDC,5m,rejected_insufficient_train_evidence,1200,800,,,,,,
+SOL-USDC,15m,rejected_insufficient_train_evidence,1200,800,,,,,,
+SOL-USDC,1H,accepted_for_paper_research,1200,800,2.0,1.8,9.8,0.24,1.1,0.63
+SOL-USDC,4H,rejected_insufficient_train_evidence,1200,800,,,,,,

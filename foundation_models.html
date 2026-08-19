@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>TAFA · Contrôle des modèles</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #07110f; color: #edf8f4; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 78% 0%, #143e34 0, transparent 36rem), #07110f; }
+      main { max-width: 1040px; margin: 0 auto; padding: 56px 24px; }
+      .eyebrow { color: #69d6b4; font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+      h1 { margin: 8px 0; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.04em; }
+      .lead { color: #aac2b9; max-width: 760px; line-height: 1.6; }
+      .notice { margin: 28px 0; padding: 16px 18px; border: 1px solid #386153; border-radius: 14px; background: #0b1c18; color: #bee2d5; }
+      .grid { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .card { padding: 22px; border: 1px solid #24453b; border-radius: 18px; background: rgba(12, 32, 27, .83); box-shadow: 0 18px 60px rgba(0,0,0,.18); }
+      .label { color: #99b6ac; font-size: 13px; } .value { font-size: 26px; font-weight: 760; margin-top: 8px; }
+      .status { display: inline-block; margin-top: 12px; border-radius: 999px; padding: 6px 10px; font-size: 12px; font-weight: 800; background: #283f38; color: #dbeee7; }
+      .ready { background: #134c39; color: #8cf0c7; } .blocked, .error, .paper_only_blocked { background: #552c31; color: #ffb5b8; }
+      .empty { color: #93afa5; margin-top: 10px; line-height: 1.5; }
+      footer { margin-top: 30px; color: #718b82; font-size: 13px; } a { color: #8fe9c9; }
+      @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } main { padding-top: 36px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">TAFA X · PAPER SAFETY LAYER</div>
+      <h1>Consensus Kronos + Chronos</h1>
+      <p class="lead">Cette vue surveille la validation de signaux du bot. Elle ne déclenche aucun ordre réel : sans deux réponses valides et concordantes, le moteur renvoie <strong>HOLD</strong>.</p>
+      <div class="notice">Les endpoints des modèles doivent être configurés côté environnement du moteur. Ils ne sont jamais saisis ni stockés par ce dashboard.</div>
+      <section class="grid" id="cards"><div class="card"><div class="label">Chargement</div><div class="value">…</div></div></section>
+      <footer><a href="/">Retour au dashboard TAFA</a> · Actualisation toutes les 3 secondes.</footer>
+    </main>
+    <script>
+      const safe = value => String(value ?? "—");
+      function card(title, vote) {
+        const state = vote?.state || "en attente";
+        return `<article class="card"><div class="label">${title}</div><div class="value">${safe(vote?.signal)}</div><span class="status ${state}">${state}</span><p class="empty">Confiance : ${vote?.confidence == null ? "—" : Math.round(vote.confidence * 100) + "%"}<br>Latence : ${vote?.latency_ms ?? "—"} ms<br>${safe(vote?.detail)}</p></article>`;
+      }
+      async function refresh() {
+        const root = document.getElementById("cards");
+        try {
+          const response = await fetch("/api/models/status", { cache: "no-store" });
+          const payload = await response.json(); const models = payload.models || {};
+          root.innerHTML = card("Kronos-base · prévision OHLCV", models.kronos) + card("Chronos-2 · validation", models.chronos) + `<article class="card"><div class="label">Décision de consensus</div><div class="value">${safe(models.signal)}</div><span class="status ${safe(models.state)}">${safe(models.state)}</span><p class="empty">${safe(models.reason)}<br>Confiance retenue : ${models.confidence == null ? "—" : Math.round(models.confidence * 100) + "%"}<br>Barres OHLCV : ${safe(models.sampled_bars)}</p></article>`;
+        } catch (error) { root.innerHTML = `<article class="card"><div class="label">État</div><div class="value">Indisponible</div><p class="empty">${safe(error.message)}</p></article>`; }
+      }
+      refresh(); setInterval(refresh, 3000);
+    </script>
+  </body>
+</html>

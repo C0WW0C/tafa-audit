@@ -1,0 +1,1678 @@
+{
+  "artifacts": [
+    {
+      "appears_pickle_protocol": true,
+      "byte_markers": [
+        "sklearn",
+        "HistGradientBoosting",
+        "numpy"
+      ],
+      "bytes": 389822,
+      "deserialized": false,
+      "path": "/home/ubuntu/upload/tafa_god_v2_model.pkl",
+      "pickle_protocol_marker": "8005",
+      "sha256": "2e5d3f6209d2cef1e273bc1efb443a302e168a96d44e1240b2a81181af52bf95"
+    },
+    {
+      "bytes": 225988,
+      "imports": [
+        "__future__",
+        "aiohttp",
+        "asyncio",
+        "base64",
+        "csv",
+        "dataclasses",
+        "datetime",
+        "email.utils",
+        "hashlib",
+        "hmac",
+        "html",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "queue",
+        "requests",
+        "sqlite3",
+        "statistics",
+        "sys",
+        "time",
+        "traceback",
+        "tradingagents.default_config",
+        "tradingagents.graph.trading_graph",
+        "typing",
+        "urllib.parse",
+        "websockets",
+        "xml.etree.ElementTree"
+      ],
+      "label": "/home/ubuntu/upload/TAFA_PARENT_OKX_FUSION_V6_1_SELF_CROSS_GUARD.py",
+      "path": "/home/ubuntu/upload/TAFA_PARENT_OKX_FUSION_V6_1_SELF_CROSS_GUARD.py",
+      "risky_calls": [
+        {
+          "call": "self.private_get",
+          "line": 995
+        },
+        {
+          "call": "self.private_post",
+          "line": 1010
+        },
+        {
+          "call": "self.private_post",
+          "line": 1021
+        },
+        {
+          "call": "self.private_get",
+          "line": 1024
+        },
+        {
+          "call": "self.private_get",
+          "line": 1032
+        },
+        {
+          "call": "self.private_get",
+          "line": 1035
+        },
+        {
+          "call": "self.private_get",
+          "line": 1038
+        },
+        {
+          "call": "asyncio.run",
+          "line": 4260
+        },
+        {
+          "call": "json.loads",
+          "line": 2065
+        },
+        {
+          "call": "self.run",
+          "line": 3844
+        },
+        {
+          "call": "json.load",
+          "line": 4213
+        },
+        {
+          "call": "json.loads",
+          "line": 2479
+        }
+      ],
+      "risky_imports": [
+        "requests",
+        "websockets"
+      ],
+      "sha256": "bb832b2700151d0d398fda8fdbe5e2015bf4aa4c9783118b75f9592c90694f13",
+      "syntax": "parsed"
+    },
+    {
+      "bytes": 216533,
+      "imports": [
+        "__future__",
+        "aiohttp",
+        "asyncio",
+        "base64",
+        "csv",
+        "dataclasses",
+        "datetime",
+        "email.utils",
+        "hashlib",
+        "hmac",
+        "html",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "queue",
+        "requests",
+        "sqlite3",
+        "statistics",
+        "sys",
+        "time",
+        "traceback",
+        "tradingagents.default_config",
+        "tradingagents.graph.trading_graph",
+        "typing",
+        "urllib.parse",
+        "websockets",
+        "xml.etree.ElementTree"
+      ],
+      "label": "/home/ubuntu/upload/TAFA_PARENT_OKX_FUSION_V6_2_BEST_FUSION_PARENT_BUS.py",
+      "path": "/home/ubuntu/upload/TAFA_PARENT_OKX_FUSION_V6_2_BEST_FUSION_PARENT_BUS.py",
+      "risky_calls": [
+        {
+          "call": "self.private_get",
+          "line": 977
+        },
+        {
+          "call": "self.private_post",
+          "line": 992
+        },
+        {
+          "call": "self.private_post",
+          "line": 1003
+        },
+        {
+          "call": "self.private_get",
+          "line": 1006
+        },
+        {
+          "call": "self.private_get",
+          "line": 1014
+        },
+        {
+          "call": "self.private_get",
+          "line": 1017
+        },
+        {
+          "call": "self.private_get",
+          "line": 1020
+        },
+        {
+          "call": "asyncio.run",
+          "line": 4150
+        },
+        {
+          "call": "json.loads",
+          "line": 2047
+        },
+        {
+          "call": "self.run",
+          "line": 3730
+        },
+        {
+          "call": "json.load",
+          "line": 4103
+        },
+        {
+          "call": "json.loads",
+          "line": 2424
+        }
+      ],
+      "risky_imports": [
+        "requests",
+        "websockets"
+      ],
+      "sha256": "afdd6bfb1e7996073278fb902d313d33e7b70402d24cfb0562c94638aaeff735",
+      "syntax": "parsed"
+    },
+    {
+      "bytes": 216049,
+      "imports": [
+        "__future__",
+        "aiohttp",
+        "asyncio",
+        "base64",
+        "csv",
+        "dataclasses",
+        "datetime",
+        "email.utils",
+        "hashlib",
+        "hmac",
+        "html",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "queue",
+        "requests",
+        "sqlite3",
+        "statistics",
+        "sys",
+        "time",
+        "traceback",
+        "tradingagents.default_config",
+        "tradingagents.graph.trading_graph",
+        "typing",
+        "urllib.parse",
+        "websockets",
+        "xml.etree.ElementTree"
+      ],
+      "label": "/home/ubuntu/upload/TAFA_PARENT_OKX_FUSION_V6_1_CANCEL_LOOP_GUARD.py",
+      "path": "/home/ubuntu/upload/TAFA_PARENT_OKX_FUSION_V6_1_CANCEL_LOOP_GUARD.py",
+      "risky_calls": [
+        {
+          "call": "self.private_get",
+          "line": 975
+        },
+        {
+          "call": "self.private_post",
+          "line": 990
+        },
+        {
+          "call": "self.private_post",
+          "line": 1001
+        },
+        {
+          "call": "self.private_get",
+          "line": 1004
+        },
+        {
+          "call": "self.private_get",
+          "line": 1012
+        },
+        {
+          "call": "self.private_get",
+          "line": 1015
+        },
+        {
+          "call": "self.private_get",
+          "line": 1018
+        },
+        {
+          "call": "asyncio.run",
+          "line": 4094
+        },
+        {
+          "call": "json.loads",
+          "line": 2045
+        },
+        {
+          "call": "self.run",
+          "line": 3678
+        },
+        {
+          "call": "json.load",
+          "line": 4047
+        },
+        {
+          "call": "json.loads",
+          "line": 2459
+        }
+      ],
+      "risky_imports": [
+        "requests",
+        "websockets"
+      ],
+      "sha256": "8fc9d733760f4775514a154da85c396ae004221b2a23b8f9553a301cc66ac17e",
+      "syntax": "parsed"
+    },
+    {
+      "bytes": 210593,
+      "imports": [
+        "__future__",
+        "aiohttp",
+        "asyncio",
+        "base64",
+        "csv",
+        "dataclasses",
+        "datetime",
+        "email.utils",
+        "hashlib",
+        "hmac",
+        "html",
+        "json",
+        "math",
+        "numpy",
+        "os",
+        "pathlib",
+        "queue",
+        "requests",
+        "sklearn.ensemble",
+        "sklearn.preprocessing",
+        "sqlite3",
+        "statistics",
+        "sys",
+        "time",
+        "traceback",
+        "tradingagents.default_config",
+        "tradingagents.graph.trading_graph",
+        "typing",
+        "urllib.parse",
+        "websockets",
+        "xml.etree.ElementTree"
+      ],
+      "label": "/home/ubuntu/upload/FUSION_ULTIMATE_V7.py",
+      "path": "/home/ubuntu/upload/FUSION_ULTIMATE_V7.py",
+      "risky_calls": [
+        {
+          "call": "self.private_get",
+          "line": 966
+        },
+        {
+          "call": "self.private_post",
+          "line": 981
+        },
+        {
+          "call": "self.private_post",
+          "line": 992
+        },
+        {
+          "call": "self.private_get",
+          "line": 995
+        },
+        {
+          "call": "self.private_get",
+          "line": 1003
+        },
+        {
+          "call": "self.private_get",
+          "line": 1006
+        },
+        {
+          "call": "self.private_get",
+          "line": 1009
+        },
+        {
+          "call": "asyncio.run",
+          "line": 4027
+        },
+        {
+          "call": "json.loads",
+          "line": 2036
+        },
+        {
+          "call": "self.run",
+          "line": 3611
+        },
+        {
+          "call": "json.load",
+          "line": 3980
+        },
+        {
+          "call": "json.loads",
+          "line": 2413
+        }
+      ],
+      "risky_imports": [
+        "requests",
+        "websockets"
+      ],
+      "sha256": "81017e22a197f2c32635efe6605e8709bb1e49ffa98a791b2581ac3a6974ecb4",
+      "syntax": "parsed"
+    },
+    {
+      "bytes": 5547767,
+      "encrypted_entries": 0,
+      "entries": 1267,
+      "extracted": false,
+      "path": "/home/ubuntu/upload/tafagpt.zip",
+      "python_audits": [
+        {
+          "bytes": 1848,
+          "imports": [
+            "fastapi",
+            "json",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 371,
+          "imports": [
+            "client"
+          ],
+          "label": "tafagpt.zip:tafagpt/account.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 778,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/ai_brain.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1332,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/ai_quality_gate.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2172,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/feature_store.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1034,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/inference_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2889,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/AI/model_training_pipeline.py",
+          "risky_calls": [],
+          "syntax": "syntax_error",
+          "syntax_error": {
+            "line": 75,
+            "message": "invalid syntax"
+          }
+        },
+        {
+          "bytes": 1104,
+          "imports": [
+            "datetime"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/model_versioning.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1060,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/strategy_optimizer_ai.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1151,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/AI/training_pipeline.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1075,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/alert_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 995,
+          "imports": [
+            "numpy"
+          ],
+          "label": "tafagpt.zip:tafagpt/analysis/correlation_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1494,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/analysis/dark_pattern_detector.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1898,
+          "imports": [
+            "logger",
+            "pandas"
+          ],
+          "label": "tafagpt.zip:tafagpt/analysis/indicator_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1128,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/analysis/market_scanner.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 721,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/analysis/regime_detector.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 574,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/analysis/signal_validator.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1028,
+          "imports": [
+            "numpy"
+          ],
+          "label": "tafagpt.zip:tafagpt/analysis/volatility_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1244,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/api_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1299,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/auto_trainer.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 930,
+          "imports": [
+            "strategy"
+          ],
+          "label": "tafagpt.zip:tafagpt/backtest_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2934,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/backtesting/backtester.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 947,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/backtesting/benchmark.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2442,
+          "imports": [
+            "logger",
+            "random"
+          ],
+          "label": "tafagpt.zip:tafagpt/backtesting/monte_carlo.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1241,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/backtesting/optimizer_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1126,
+          "imports": [
+            "datetime",
+            "json"
+          ],
+          "label": "tafagpt.zip:tafagpt/backtesting/performance_report.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1354,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/backtesting/walk_forward.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1820,
+          "imports": [
+            "base64",
+            "datetime",
+            "hmac",
+            "os",
+            "requests",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/client.py",
+          "risky_calls": [],
+          "risky_imports": [
+            "requests"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5049,
+          "imports": [
+            "dotenv",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/config.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1523,
+          "imports": [
+            "logger",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/config/config_loader.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2822,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/config/environment_manager.py",
+          "risky_calls": [],
+          "syntax": "syntax_error",
+          "syntax_error": {
+            "line": 96,
+            "message": "invalid syntax"
+          }
+        },
+        {
+          "bytes": 1133,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/config_validator.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1060,
+          "imports": [
+            "datetime"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/api_logger.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1775,
+          "imports": [
+            "engine",
+            "logger",
+            "signal",
+            "sys",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/app.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7072,
+          "imports": [
+            "datetime",
+            "json",
+            "os",
+            "sqlite3"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/database.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3866,
+          "imports": [
+            "config",
+            "database",
+            "datetime",
+            "logger",
+            "market_data",
+            "risk_manager",
+            "strategy",
+            "trade_manager"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1102,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/exception_handler.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1241,
+          "imports": [
+            "datetime"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/health_monitor.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 527,
+          "imports": [
+            "dataclasses"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/sqlite_models.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2378,
+          "imports": [
+            "datetime",
+            "logger",
+            "os",
+            "platform",
+            "psutil",
+            "threading",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/Core/system_monitor.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1478,
+          "imports": [
+            "database",
+            "streamlit"
+          ],
+          "label": "tafagpt.zip:tafagpt/dashboard.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1272,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/Dashboard/dashboard_pages.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1460,
+          "imports": [
+            "database",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Dashboard/web_dashboard_api.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1272,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/dashboard_pages.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 725,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/data_loader.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 527,
+          "imports": [
+            "dataclasses"
+          ],
+          "label": "tafagpt.zip:tafagpt/Database/database_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2101,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/account_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1930,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/market_data.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 729,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/ohlcv_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2482,
+          "imports": [
+            "base64",
+            "config",
+            "hmac",
+            "json",
+            "logger",
+            "requests",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/okx_client.py",
+          "risky_calls": [],
+          "risky_imports": [
+            "requests"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1421,
+          "imports": [
+            "database",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/order.py",
+          "risky_calls": [
+            {
+              "call": "self.client.place_order",
+              "line": 46
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1360,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/order_router.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3011,
+          "imports": [
+            "json",
+            "logger",
+            "threading",
+            "websocket"
+          ],
+          "label": "tafagpt.zip:tafagpt/Exchange/websocket.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 154
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1250,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/execution_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1097,
+          "imports": [
+            "pandas"
+          ],
+          "label": "tafagpt.zip:tafagpt/feature_engineering.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1003,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/fee_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 496,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/health_check.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 244,
+          "imports": [
+            "account",
+            "client",
+            "market",
+            "orders"
+          ],
+          "label": "tafagpt.zip:tafagpt/init.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 663,
+          "imports": [
+            "engine",
+            "logger",
+            "main_config",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/launcher.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3263,
+          "imports": [
+            "datetime",
+            "logging",
+            "logging.handlers",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/logger.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 696,
+          "imports": [
+            "database"
+          ],
+          "label": "tafagpt.zip:tafagpt/logger_dashboard.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 636,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/main_config.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 599,
+          "imports": [
+            "client"
+          ],
+          "label": "tafagpt.zip:tafagpt/market.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 836,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/market_regime_ai.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1914,
+          "imports": [
+            "logger",
+            "os",
+            "pickle",
+            "sklearn.ensemble"
+          ],
+          "label": "tafagpt.zip:tafagpt/memory.py",
+          "risky_calls": [
+            {
+              "call": "pickle.load",
+              "line": 122
+            }
+          ],
+          "risky_imports": [
+            "pickle"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1769,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/metrics_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1914,
+          "imports": [
+            "logger",
+            "os",
+            "pickle",
+            "sklearn.ensemble"
+          ],
+          "label": "tafagpt.zip:tafagpt/model_manager.py",
+          "risky_calls": [
+            {
+              "call": "pickle.load",
+              "line": 122
+            }
+          ],
+          "risky_imports": [
+            "pickle"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1299,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/news_analyser.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1307,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/news_analyzer.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 725,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/notification.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 778,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/optimizer.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2006,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/order_manager.py",
+          "risky_calls": [
+            {
+              "call": "self.okx.place_order",
+              "line": 50
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1541,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/orderbook.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1628,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/portfolio/btc_accumulator.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1528,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/portfolio/multi_symbol_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 947,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/portfolio/performance.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 818,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/portfolio/portfolio_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 919,
+          "imports": [
+            "datetime",
+            "json"
+          ],
+          "label": "tafagpt.zip:tafagpt/report_generator.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 861,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/Risk/position_sizer.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6409,
+          "imports": [
+            "config",
+            "datetime",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Risk/risk_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1383,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Risk/sl_tp_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1110,
+          "imports": [
+            "logger",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/Risk/trade_guard.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1079,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/Risk/trailing_stop.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 684,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/risk_brain.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1183,
+          "imports": [
+            "logger",
+            "time"
+          ],
+          "label": "tafagpt.zip:tafagpt/scheduler.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1154,
+          "imports": [
+            "logger",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/security.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1218,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/sentiment_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 724,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/signal_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 814,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/strategy_fusion.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 440,
+          "imports": [
+            "backtesting.backtester"
+          ],
+          "label": "tafagpt.zip:tafagpt/test/test_backtester.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 537,
+          "imports": [
+            "portfolio.btc_accumulator"
+          ],
+          "label": "tafagpt.zip:tafagpt/test/test_btc_accumulator.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1371,
+          "imports": [
+            "logger",
+            "os",
+            "shutil"
+          ],
+          "label": "tafagpt.zip:tafagpt/tools/backup_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1331,
+          "imports": [
+            "csv",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/tools/csv_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1010,
+          "imports": [
+            "json",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/tools/export_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1160,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/tools/telegram_bot.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1284,
+          "imports": [
+            "csv",
+            "os"
+          ],
+          "label": "tafagpt.zip:tafagpt/trade_history.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1711,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/dca_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1711,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/grid_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1732,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/liquidity_detector.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 532,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/live_switch.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 933,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/Trading/paper_trading.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1706,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/position_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4803,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/strategy.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3975,
+          "imports": [],
+          "label": "tafagpt.zip:tafagpt/Trading/strategy_registry.py",
+          "risky_calls": [],
+          "syntax": "syntax_error",
+          "syntax_error": {
+            "line": 96,
+            "message": "invalid syntax"
+          }
+        },
+        {
+          "bytes": 1027,
+          "imports": [
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/strategy_selector.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1639,
+          "imports": [
+            "config",
+            "database",
+            "logger",
+            "risk_manager"
+          ],
+          "label": "tafagpt.zip:tafagpt/Trading/trade_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1460,
+          "imports": [
+            "database",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/web_dashboard_api.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1848,
+          "imports": [
+            "fastapi",
+            "json",
+            "logger"
+          ],
+          "label": "tafagpt.zip:tafagpt/websocket_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        }
+      ],
+      "python_sources_audited": 108,
+      "python_sources_skipped_size": [],
+      "runtime_artifact_count": 1133,
+      "runtime_artifact_examples": [
+        "tafagpt/.env",
+        "tafagpt/venv/",
+        "tafagpt/venv/Include/",
+        "tafagpt/venv/Lib/",
+        "tafagpt/venv/Lib/site-packages/",
+        "tafagpt/venv/Lib/site-packages/pip/",
+        "tafagpt/venv/Lib/site-packages/pip/__init__.py",
+        "tafagpt/venv/Lib/site-packages/pip/__main__.py",
+        "tafagpt/venv/Lib/site-packages/pip/__pip-runner__.py",
+        "tafagpt/venv/Lib/site-packages/pip/__pycache__/",
+        "tafagpt/venv/Lib/site-packages/pip/__pycache__/__init__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/__pycache__/__main__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/__pycache__/__pip-runner__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__init__.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/__init__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/build_env.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/cache.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/configuration.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/exceptions.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/main.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/pyproject.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/self_outdated_check.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/__pycache__/wheel_builder.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/build_env.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cache.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__init__.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/__init__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/autocompletion.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/base_command.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/cmdoptions.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/command_context.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/main.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/main_parser.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/parser.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/progress_bars.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/req_command.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/spinners.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/__pycache__/status_codes.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/autocompletion.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/base_command.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/cmdoptions.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/command_context.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/main.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/main_parser.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/parser.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/progress_bars.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/req_command.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/spinners.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/cli/status_codes.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__init__.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/__init__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/cache.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/check.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/completion.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/configuration.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/debug.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/download.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/freeze.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/hash.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/help.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/index.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/inspect.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/install.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/list.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/search.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/show.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/uninstall.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/__pycache__/wheel.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/cache.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/check.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/completion.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/configuration.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/debug.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/download.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/freeze.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/hash.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/help.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/index.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/inspect.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/install.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/list.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/search.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/show.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/uninstall.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/commands/wheel.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/configuration.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__init__.py",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__pycache__/",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__pycache__/__init__.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__pycache__/base.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__pycache__/installed.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__pycache__/sdist.cpython-312.pyc",
+        "tafagpt/venv/Lib/site-packages/pip/_internal/distributions/__pycache__/wheel.cpython-312.pyc"
+      ],
+      "sha256": "fee31c09b00f3d557cc6cf4e3d980873522427e0023f47dabcdab6f833e32806",
+      "unsafe_member_paths": []
+    }
+  ],
+  "audit_mode": "static_only_no_execution"
+}

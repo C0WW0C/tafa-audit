@@ -1,0 +1,2686 @@
+{
+  "artifacts": [
+    {
+      "bytes": 24044889,
+      "encrypted_entries": 0,
+      "entries": 426,
+      "extracted": false,
+      "path": "/home/ubuntu/upload/TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip",
+      "python_audits": [
+        {
+          "bytes": 786,
+          "imports": [
+            "__future__",
+            "os",
+            "run_v10"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/run_paper_demo.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 995,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/strategy_optimizer_ai.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4632,
+          "imports": [
+            "__future__",
+            "logger",
+            "model_manager",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/training_pipeline.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 141,
+          "imports": [
+            "neural_parent_brain"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1290,
+          "imports": [
+            "__future__",
+            "json",
+            "pathlib",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/auto_config.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 31
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/fusion_agents/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/quality_gate/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1835,
+          "imports": [
+            "__future__",
+            "logger",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/inference_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 10577,
+          "imports": [
+            "__future__",
+            "config",
+            "core.runtime_config",
+            "dataclasses",
+            "json",
+            "os",
+            "time",
+            "typing",
+            "urllib.error",
+            "urllib.request"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/foundation_models.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 96
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 11207,
+          "imports": [
+            "__future__",
+            "logger",
+            "math",
+            "sentiment_engine",
+            "trading.intelligent_strategy",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/ai_brain.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1082,
+          "imports": [
+            "__future__",
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/ai_quality_gate.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1101,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/model_training_pipeline.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5652,
+          "imports": [
+            "__future__",
+            "dataclasses",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/neural_parent_brain.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/specialists/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 819,
+          "imports": [
+            "__future__",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/feature_store.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/memory/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1031,
+          "imports": [
+            "datetime"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/ai/model_versioning.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1067,
+          "imports": [
+            "__future__",
+            "core.storage_profile",
+            "os",
+            "run_v10"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/run_elite_final_paper.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7517,
+          "imports": [
+            "dotenv",
+            "os",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/config.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1288,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/risk/sl_tp_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7352,
+          "imports": [
+            "config",
+            "datetime",
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/risk/risk_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 0,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/risk/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1007,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/risk/trailing_stop.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 801,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/risk/position_sizer.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1036,
+          "imports": [
+            "logger",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/risk/trade_guard.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 886,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/benchmark.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 689,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/walk_forward.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 586,
+          "imports": [
+            "datetime",
+            "json"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/performance_report.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4780,
+          "imports": [
+            "__future__",
+            "backtesting.historical",
+            "dataclasses",
+            "json",
+            "pathlib",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/multiframe.py",
+          "risky_calls": [
+            {
+              "call": "backtest.run",
+              "line": 96
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 672,
+          "imports": [
+            "__future__",
+            "backtesting",
+            "backtesting.backtester"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 684,
+          "imports": [
+            "random"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/monte_carlo.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1161,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/optimizer_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 12964,
+          "imports": [
+            "__future__",
+            "config",
+            "data.loader",
+            "dataclasses",
+            "json",
+            "pathlib",
+            "sys",
+            "trading.intelligent_strategy",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/historical.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 149
+            },
+            {
+              "call": "self.run",
+              "line": 328
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2136,
+          "imports": [
+            "__future__",
+            "logger",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/backtester.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1275,
+          "imports": [
+            "__future__",
+            "argparse",
+            "backtesting.historical",
+            "data.loader",
+            "json",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/intelligent_backtest.py",
+          "risky_calls": [
+            {
+              "call": "run",
+              "line": 28
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2314,
+          "imports": [
+            "__future__",
+            "argparse",
+            "backtesting.historical",
+            "json",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/backtesting/run_historical.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/web/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 26474,
+          "imports": [
+            "__future__",
+            "core",
+            "core.candles_feed",
+            "core.performance_monitor",
+            "core.runtime_config",
+            "hmac",
+            "http.server",
+            "json",
+            "os",
+            "pathlib",
+            "re",
+            "sqlite3",
+            "subprocess",
+            "sys",
+            "threading",
+            "time",
+            "traceback",
+            "typing",
+            "urllib.parse"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/web/server.py",
+          "risky_calls": [
+            {
+              "call": "re.compile",
+              "line": 49
+            },
+            {
+              "call": "subprocess.run",
+              "line": 89
+            },
+            {
+              "call": "json.loads",
+              "line": 168
+            },
+            {
+              "call": "json.loads",
+              "line": 568
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1732,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/liquidity_detector.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 10051,
+          "imports": [
+            "__future__",
+            "config",
+            "core.database",
+            "core.paper_execution_guard",
+            "core.trade_journal",
+            "exchange.okx_client",
+            "logger",
+            "risk.risk_manager",
+            "trading.paper_trading",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/trade_manager.py",
+          "risky_calls": [
+            {
+              "call": "self.client.place_order",
+              "line": 181
+            },
+            {
+              "call": "self.client.place_order",
+              "line": 214
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 0,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1711,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/grid_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 385,
+          "imports": [
+            "trading.intelligent_strategy"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/strategy.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 14851,
+          "imports": [
+            "__future__",
+            "collections",
+            "dataclasses",
+            "logger",
+            "math",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/intelligent_strategy.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 155,
+          "imports": [
+            "__future__"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/strategy_policy.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3982,
+          "imports": [
+            "__future__",
+            "dataclasses",
+            "logger",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/paper_trading.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1711,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/dca_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1598,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/position_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 956,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/strategy_selector.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 491,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/live_switch.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 540,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/trading/strategy_registry.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 54,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/model_server/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 12158,
+          "imports": [
+            "__future__",
+            "chronos",
+            "dataclasses",
+            "http",
+            "http.server",
+            "json",
+            "model",
+            "os",
+            "pandas",
+            "pathlib",
+            "sys",
+            "threading",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/model_server/server.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 242
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6084,
+          "imports": [
+            "__future__",
+            "argparse",
+            "ast",
+            "hashlib",
+            "json",
+            "pathlib",
+            "zipfile"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/static_audit_received_artifacts.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2047,
+          "imports": [
+            "__future__",
+            "argparse",
+            "hashlib",
+            "pathlib",
+            "zipfile"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/package_m7_release.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6756,
+          "imports": [
+            "__future__",
+            "argparse",
+            "backtesting.historical",
+            "csv",
+            "json",
+            "pathlib",
+            "scripts.sweep_atr_tp_multiframe",
+            "scripts.walk_forward_atr_tp",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/run_multidataset_walkforward.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2672,
+          "imports": [
+            "__future__",
+            "pathlib",
+            "sys",
+            "yaml"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/validate_ibhextif_knowledge.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1561,
+          "imports": [
+            "__future__",
+            "ai.neural_parent_brain",
+            "core.quality_gate_live",
+            "pathlib",
+            "sys",
+            "trading.intelligent_strategy",
+            "trading.paper_trading",
+            "trading.trade_manager"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/smoke_trade_pipeline.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2350,
+          "imports": [
+            "__future__",
+            "argparse",
+            "backtesting.multiframe",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/run_elite_final_backtest.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2941,
+          "imports": [
+            "__future__",
+            "argparse",
+            "csv",
+            "hashlib",
+            "json",
+            "pathlib"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/validate_market_datasets.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7083,
+          "imports": [
+            "__future__",
+            "argparse",
+            "http.server",
+            "json",
+            "threading",
+            "time",
+            "typing",
+            "urllib.request"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/metrics_exporter.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 27
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2015,
+          "imports": [
+            "__future__",
+            "exchange.websocket",
+            "pathlib",
+            "sys",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/test_okx_ws.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7424,
+          "imports": [
+            "__future__",
+            "argparse",
+            "backtesting.historical",
+            "backtesting.multiframe",
+            "csv",
+            "itertools",
+            "json",
+            "pathlib",
+            "sys",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/sweep_atr_tp_multiframe.py",
+          "risky_calls": [
+            {
+              "call": "run",
+              "line": 68
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2590,
+          "imports": [
+            "__future__",
+            "argparse",
+            "csv",
+            "os",
+            "pathlib",
+            "subprocess",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/elite_final_release_gate.py",
+          "risky_calls": [
+            {
+              "call": "subprocess.run",
+              "line": 62
+            },
+            {
+              "call": "subprocess.run",
+              "line": 64
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1849,
+          "imports": [
+            "__future__",
+            "core",
+            "core.engine_v10",
+            "json",
+            "pathlib",
+            "subprocess",
+            "sys",
+            "time",
+            "urllib.request"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/self_test.py",
+          "risky_calls": [
+            {
+              "call": "subprocess.run",
+              "line": 15
+            },
+            {
+              "call": "subprocess.Popen",
+              "line": 30
+            },
+            {
+              "call": "json.loads",
+              "line": 35
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3809,
+          "imports": [
+            "__future__",
+            "argparse",
+            "csv",
+            "pathlib",
+            "requests",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/fetch_okx_history.py",
+          "risky_calls": [],
+          "risky_imports": [
+            "requests"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4010,
+          "imports": [
+            "__future__",
+            "ai.neural_parent_brain",
+            "core.database",
+            "core.engine",
+            "core.engine_v10",
+            "os",
+            "pathlib",
+            "py_compile",
+            "pytest",
+            "shutil",
+            "subprocess",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/validate_project.py",
+          "risky_calls": [
+            {
+              "call": "subprocess.run",
+              "line": 99
+            },
+            {
+              "call": "py_compile.compile",
+              "line": 68
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2325,
+          "imports": [
+            "__future__",
+            "argparse",
+            "importlib.util",
+            "os",
+            "pathlib",
+            "subprocess",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/m7_release_gate.py",
+          "risky_calls": [
+            {
+              "call": "subprocess.run",
+              "line": 26
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6942,
+          "imports": [
+            "__future__",
+            "argparse",
+            "datetime",
+            "json",
+            "sys",
+            "time",
+            "urllib.request"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/monitor_prod.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 29
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2215,
+          "imports": [
+            "__future__",
+            "core",
+            "core.database",
+            "core.engine",
+            "pathlib",
+            "shutil",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/fix_windows_shadows.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2287,
+          "imports": [
+            "__future__",
+            "pathlib",
+            "sys",
+            "trading.intelligent_strategy"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/audit_closed_bars_smoke.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4352,
+          "imports": [
+            "__future__",
+            "backtesting.historical",
+            "json",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/run_tsmom_backtests.py",
+          "risky_calls": [
+            {
+              "call": "bt.run",
+              "line": 43
+            },
+            {
+              "call": "run",
+              "line": 66
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 10906,
+          "imports": [
+            "__future__",
+            "argparse",
+            "backtesting.historical",
+            "backtesting.multiframe",
+            "csv",
+            "itertools",
+            "json",
+            "pathlib",
+            "scripts.sweep_atr_tp_multiframe",
+            "sys",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/walk_forward_atr_tp.py",
+          "risky_calls": [
+            {
+              "call": "run",
+              "line": 48
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1257,
+          "imports": [
+            "__future__",
+            "ai.foundation_models",
+            "csv",
+            "json",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/scripts/check_local_model_consensus.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 9697,
+          "imports": [
+            "__future__",
+            "base64",
+            "datetime",
+            "hmac",
+            "json",
+            "logger",
+            "os",
+            "requests",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/okx_client.py",
+          "risky_calls": [],
+          "risky_imports": [
+            "requests"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 0,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4632,
+          "imports": [
+            "__future__",
+            "data.loader",
+            "exchange.okx_client",
+            "json",
+            "logger",
+            "random",
+            "typing",
+            "urllib.request"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/market_data.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 67
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1426,
+          "imports": [
+            "core.database",
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/order.py",
+          "risky_calls": [
+            {
+              "call": "self.client.place_order",
+              "line": 46
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1254,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/order_router.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2101,
+          "imports": [
+            "config",
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/account_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16113,
+          "imports": [
+            "__future__",
+            "json",
+            "logger",
+            "os",
+            "threading",
+            "time",
+            "typing",
+            "websocket"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/websocket.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 230
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 593,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/exchange/ohlcv_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6365,
+          "imports": [
+            "__future__",
+            "argparse",
+            "os",
+            "pathlib",
+            "signal",
+            "subprocess",
+            "sys",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/launch_tafa.py",
+          "risky_calls": [
+            {
+              "call": "subprocess.Popen",
+              "line": 48
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2365,
+          "imports": [
+            "__future__",
+            "config",
+            "core.circuit_breaker",
+            "core.engine_v10",
+            "core.quality_gate_live",
+            "core.trade_journal",
+            "importlib",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/health_v10.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5266,
+          "imports": [
+            "__future__",
+            "config",
+            "core",
+            "core.engine_v10",
+            "core.trade_journal",
+            "json",
+            "logging",
+            "os",
+            "pathlib",
+            "signal",
+            "sys",
+            "time",
+            "web.server"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/run_v10.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 644,
+          "imports": [
+            "__future__",
+            "run_paper_demo",
+            "web"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_m7_paper_demo.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 867,
+          "imports": [
+            "__future__",
+            "backtesting.multiframe",
+            "pytest",
+            "run_elite_final_paper"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_net_target_profile.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5168,
+          "imports": [
+            "__future__",
+            "core",
+            "json",
+            "re",
+            "urllib.request",
+            "web"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_runtime_dashboard.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 30
+            },
+            {
+              "call": "json.loads",
+              "line": 119
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2816,
+          "imports": [
+            "ai.foundation_models"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_foundation_models.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 857,
+          "imports": [
+            "__future__",
+            "backtesting.multiframe",
+            "pytest",
+            "run_elite_final_paper",
+            "web"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_elite_final_profile.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2543,
+          "imports": [
+            "json",
+            "model_server.server",
+            "threading",
+            "urllib.error",
+            "urllib.request"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_local_model_server.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 28
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2661,
+          "imports": [
+            "__future__",
+            "core.paper_execution_guard",
+            "trading",
+            "trading.paper_trading"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_paper_execution_guard.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 369,
+          "imports": [
+            "__future__",
+            "scripts.run_multidataset_walkforward"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_multidataset_walkforward.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1711,
+          "imports": [
+            "__future__",
+            "core.storage_profile",
+            "pytest"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_storage_profile.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1224,
+          "imports": [
+            "__future__",
+            "pytest",
+            "scripts.walk_forward_atr_tp"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_walk_forward_atr_tp.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 859,
+          "imports": [
+            "ai.neural_parent_brain"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_neural_parent_brain.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 728,
+          "imports": [
+            "__future__",
+            "pytest",
+            "scripts.sweep_atr_tp_multiframe"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_atr_tp_sweep.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5628,
+          "imports": [
+            "__future__",
+            "core",
+            "core.paper_execution_guard",
+            "exchange.okx_client",
+            "exchange.websocket",
+            "json",
+            "trading",
+            "trading.paper_trading",
+            "urllib.request",
+            "web"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_manual_paper_console.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 103
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 982,
+          "imports": [
+            "exchange.websocket",
+            "json"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_okx_demo_candle_fallback.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 11
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 348,
+          "imports": [
+            "run_v10"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/tests/test_dashboard_launch_mode.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1819,
+          "imports": [
+            "__future__",
+            "csv",
+            "pathlib",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/data/loader.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 15,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/data/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/data/datasets/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/data/market/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 23426,
+          "imports": [
+            "einops",
+            "math",
+            "torch",
+            "torch.autograd",
+            "torch.nn",
+            "torch.nn.functional"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/model/module.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 412,
+          "imports": [
+            "kronos"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/model/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 30133,
+          "imports": [
+            "huggingface_hub",
+            "model.module",
+            "numpy",
+            "pandas",
+            "sys",
+            "torch",
+            "tqdm"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/model/kronos.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 11688,
+          "imports": [
+            "os",
+            "typing",
+            "yaml"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune_csv/config_loader.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 15358,
+          "imports": [
+            "argparse",
+            "config_loader",
+            "finetune_base_model",
+            "finetune_tokenizer",
+            "json",
+            "model",
+            "os",
+            "sys",
+            "time",
+            "torch",
+            "torch.distributed",
+            "torch.nn",
+            "torch.utils.data",
+            "traceback"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune_csv/train_sequential.py",
+          "risky_calls": [
+            {
+              "call": "json.load",
+              "line": 92
+            },
+            {
+              "call": "json.load",
+              "line": 178
+            },
+            {
+              "call": "json.load",
+              "line": 210
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 19127,
+          "imports": [
+            "argparse",
+            "config_loader",
+            "datetime",
+            "json",
+            "logging",
+            "logging.handlers",
+            "model",
+            "numpy",
+            "os",
+            "pandas",
+            "pickle",
+            "random",
+            "sys",
+            "time",
+            "torch",
+            "torch.distributed",
+            "torch.nn",
+            "torch.nn.parallel",
+            "torch.utils.data",
+            "torch.utils.data.distributed"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune_csv/finetune_base_model.py",
+          "risky_calls": [
+            {
+              "call": "model.eval",
+              "line": 313
+            },
+            {
+              "call": "json.load",
+              "line": 398
+            },
+            {
+              "call": "json.load",
+              "line": 425
+            }
+          ],
+          "risky_imports": [
+            "pickle"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 13741,
+          "imports": [
+            "argparse",
+            "config_loader",
+            "datetime",
+            "finetune_base_model",
+            "json",
+            "logging",
+            "logging.handlers",
+            "model",
+            "numpy",
+            "os",
+            "random",
+            "sys",
+            "time",
+            "torch",
+            "torch.distributed",
+            "torch.nn.functional",
+            "torch.nn.parallel",
+            "torch.utils.data",
+            "torch.utils.data.distributed"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune_csv/finetune_tokenizer.py",
+          "risky_calls": [
+            {
+              "call": "model.eval",
+              "line": 236
+            },
+            {
+              "call": "json.load",
+              "line": 313
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2608,
+          "imports": [
+            "app",
+            "flask",
+            "flask_cors",
+            "model",
+            "numpy",
+            "os",
+            "pandas",
+            "plotly",
+            "subprocess",
+            "sys",
+            "time",
+            "webbrowser"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/webui/run.py",
+          "risky_calls": [
+            {
+              "call": "app.run",
+              "line": 82
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 30464,
+          "imports": [
+            "datetime",
+            "flask",
+            "flask_cors",
+            "json",
+            "model",
+            "numpy",
+            "os",
+            "pandas",
+            "plotly.graph_objects",
+            "plotly.utils",
+            "sys",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/webui/app.py",
+          "risky_calls": [
+            {
+              "call": "app.run",
+              "line": 708
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5434,
+          "imports": [
+            "config",
+            "numpy",
+            "pickle",
+            "random",
+            "torch",
+            "torch.utils.data"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/dataset.py",
+          "risky_calls": [
+            {
+              "call": "pickle.load",
+              "line": 42
+            }
+          ],
+          "risky_imports": [
+            "pickle"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6247,
+          "imports": [
+            "os"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/config.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 15140,
+          "imports": [
+            "argparse",
+            "collections",
+            "config",
+            "matplotlib",
+            "model.kronos",
+            "numpy",
+            "os",
+            "pandas",
+            "pickle",
+            "qlib",
+            "qlib.backtest",
+            "qlib.config",
+            "qlib.contrib.evaluate",
+            "qlib.contrib.strategy",
+            "qlib.utils",
+            "qlib.utils.time",
+            "sys",
+            "torch",
+            "torch.utils.data",
+            "tqdm"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/qlib_test.py",
+          "risky_calls": [
+            {
+              "call": "eval",
+              "line": 211
+            },
+            {
+              "call": "eval",
+              "line": 212
+            },
+            {
+              "call": "pickle.load",
+              "line": 338
+            },
+            {
+              "call": "pickle.load",
+              "line": 353
+            }
+          ],
+          "risky_imports": [
+            "pickle"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5645,
+          "imports": [
+            "config",
+            "numpy",
+            "os",
+            "pandas",
+            "pickle",
+            "qlib",
+            "qlib.config",
+            "qlib.data",
+            "qlib.data.dataset.loader",
+            "tqdm"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/qlib_data_preprocess.py",
+          "risky_calls": [
+            {
+              "call": "load",
+              "line": 58
+            }
+          ],
+          "risky_imports": [
+            "pickle"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 11455,
+          "imports": [
+            "argparse",
+            "comet_ml",
+            "config",
+            "dataset",
+            "datetime",
+            "json",
+            "model.kronos",
+            "os",
+            "sys",
+            "time",
+            "torch",
+            "torch.distributed",
+            "torch.nn.functional",
+            "torch.nn.parallel",
+            "torch.utils.data",
+            "torch.utils.data.distributed",
+            "utils.training_utils"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/train_tokenizer.py",
+          "risky_calls": [
+            {
+              "call": "model.eval",
+              "line": 174
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 10026,
+          "imports": [
+            "comet_ml",
+            "config",
+            "dataset",
+            "json",
+            "model.kronos",
+            "os",
+            "sys",
+            "time",
+            "torch",
+            "torch.distributed",
+            "torch.nn.parallel",
+            "torch.utils.data",
+            "torch.utils.data.distributed",
+            "utils.training_utils"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/train_predictor.py",
+          "risky_calls": [
+            {
+              "call": "model.eval",
+              "line": 135
+            },
+            {
+              "call": "tokenizer.eval",
+              "line": 214
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 0,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/utils/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3830,
+          "imports": [
+            "datetime",
+            "numpy",
+            "os",
+            "random",
+            "torch",
+            "torch.distributed"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/finetune/utils/training_utils.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 52593,
+          "imports": [
+            "akshare",
+            "datetime",
+            "json",
+            "matplotlib.pyplot",
+            "model",
+            "numpy",
+            "os",
+            "pandas",
+            "random",
+            "requests",
+            "sys",
+            "time",
+            "traceback",
+            "typing",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_new.py",
+          "risky_calls": [],
+          "risky_imports": [
+            "requests"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1918,
+          "imports": [
+            "matplotlib.pyplot",
+            "model",
+            "pandas",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_wo_vol_example.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2457,
+          "imports": [
+            "matplotlib.pyplot",
+            "model",
+            "pandas",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_example.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 65400,
+          "imports": [
+            "akshare",
+            "datetime",
+            "json",
+            "matplotlib.backends.backend_tkagg",
+            "matplotlib.dates",
+            "matplotlib.pyplot",
+            "matplotlib.ticker",
+            "model",
+            "numpy",
+            "os",
+            "pandas",
+            "random",
+            "requests",
+            "sys",
+            "threading",
+            "time",
+            "tkinter",
+            "traceback",
+            "typing",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_new_GUI.py",
+          "risky_calls": [],
+          "risky_imports": [
+            "requests"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 24268,
+          "imports": [
+            "akshare",
+            "baostock",
+            "datetime",
+            "json",
+            "numpy",
+            "os",
+            "pandas",
+            "random",
+            "requests",
+            "subprocess",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/get_date_new.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 81
+            }
+          ],
+          "risky_imports": [
+            "requests",
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 22761,
+          "imports": [
+            "akshare",
+            "baostock",
+            "datetime",
+            "json",
+            "numpy",
+            "os",
+            "pandas",
+            "random",
+            "requests",
+            "subprocess",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/get_akshare_date_2024-2025_x.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 88
+            }
+          ],
+          "risky_imports": [
+            "requests",
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 14807,
+          "imports": [
+            "datetime",
+            "matplotlib.pyplot",
+            "numpy",
+            "os",
+            "pandas",
+            "traceback",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/yuce/historical_backtest.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 22647,
+          "imports": [
+            "datetime",
+            "matplotlib.pyplot",
+            "model",
+            "numpy",
+            "os",
+            "pandas",
+            "sys",
+            "traceback",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_akshare_2024-2025.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 6514,
+          "imports": [
+            "akshare",
+            "argparse",
+            "matplotlib.pyplot",
+            "model",
+            "os",
+            "pandas",
+            "sys",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_cn_markets_day.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16811,
+          "imports": [
+            "datetime",
+            "matplotlib.pyplot",
+            "numpy",
+            "os",
+            "pandas",
+            "traceback",
+            "warnings"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/run_backtest_kronos.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2312,
+          "imports": [
+            "matplotlib.pyplot",
+            "model",
+            "pandas",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/examples/prediction_batch_example.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2814,
+          "imports": [
+            "model",
+            "numpy",
+            "pandas",
+            "pathlib",
+            "random",
+            "torch"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/tests/data/generate_regression_output.py",
+          "risky_calls": [
+            {
+              "call": "tokenizer.eval",
+              "line": 49
+            },
+            {
+              "call": "model.eval",
+              "line": 50
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5326,
+          "imports": [
+            "model",
+            "numpy",
+            "pandas",
+            "pathlib",
+            "pytest",
+            "random",
+            "torch",
+            "tqdm"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/third_party/Kronos/tests/test_kronos_regression.py",
+          "risky_calls": [
+            {
+              "call": "tokenizer.eval",
+              "line": 64
+            },
+            {
+              "call": "model.eval",
+              "line": 65
+            },
+            {
+              "call": "tokenizer.eval",
+              "line": 100
+            },
+            {
+              "call": "model.eval",
+              "line": 101
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 20419,
+          "imports": [
+            "__future__",
+            "core.bot_process",
+            "core.candles_feed",
+            "core.manual_paper_orders",
+            "core.runtime_config",
+            "json",
+            "pandas",
+            "pathlib",
+            "plotly.graph_objects",
+            "plotly.subplots",
+            "streamlit",
+            "sys",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/control_panel.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 546
+            },
+            {
+              "call": "json.loads",
+              "line": 271
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1332,
+          "imports": [
+            "__future__",
+            "dataclasses"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/quality_gate_live.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2808,
+          "imports": [
+            "__future__",
+            "json",
+            "math",
+            "os",
+            "pathlib",
+            "time",
+            "typing",
+            "uuid"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/manual_paper_orders.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 63
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 2273,
+          "imports": [
+            "datetime",
+            "logger",
+            "os",
+            "platform",
+            "psutil",
+            "threading",
+            "time"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/system_monitor.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3346,
+          "imports": [
+            "__future__",
+            "json",
+            "logging",
+            "pathlib",
+            "threading",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/status_bridge.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 84
+            },
+            {
+              "call": "json.loads",
+              "line": 53
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 287,
+          "imports": [
+            "risk.risk_manager"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/risk_manager.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 281,
+          "imports": [
+            "__future__",
+            "pathlib",
+            "sys"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/__init__.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3243,
+          "imports": [
+            "__future__",
+            "data.loader",
+            "exchange.okx_client",
+            "pathlib",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/candles_feed.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 5700,
+          "imports": [
+            "__future__",
+            "core.performance_analytics",
+            "core.status_bridge",
+            "pathlib",
+            "sqlite3",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/performance_monitor.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3415,
+          "imports": [
+            "__future__",
+            "dataclasses",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/circuit_breaker.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 990,
+          "imports": [
+            "datetime"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/api_logger.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4553,
+          "imports": [
+            "__future__",
+            "math",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/performance_analytics.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 481,
+          "imports": [
+            "dataclasses"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/sqlite_models.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1294,
+          "imports": [
+            "__future__",
+            "json",
+            "pathlib",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/trade_journal.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 30
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 86,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/brain_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1028,
+          "imports": [
+            "logger"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/exception_handler.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 16054,
+          "imports": [
+            "__future__",
+            "config",
+            "core.database",
+            "core.manual_paper_orders",
+            "core.performance_analytics",
+            "core.runtime_config",
+            "core.smart_alerts",
+            "core.status_bridge",
+            "data.loader",
+            "exchange.market_data",
+            "exchange.okx_client",
+            "exchange.websocket",
+            "logger",
+            "pathlib",
+            "random",
+            "risk.risk_manager",
+            "sys",
+            "time",
+            "trading.paper_trading",
+            "trading.strategy",
+            "trading.trade_manager",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 11347,
+          "imports": [
+            "__future__",
+            "config",
+            "core.status_bridge",
+            "json",
+            "pathlib",
+            "risk.risk_manager",
+            "threading",
+            "trading.intelligent_strategy",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/runtime_config.py",
+          "risky_calls": [
+            {
+              "call": "json.loads",
+              "line": 130
+            }
+          ],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4398,
+          "imports": [
+            "__future__",
+            "dataclasses",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/paper_execution_guard.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7072,
+          "imports": [
+            "datetime",
+            "json",
+            "os",
+            "sqlite3"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/database.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3791,
+          "imports": [
+            "__future__",
+            "dataclasses",
+            "os",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/storage_profile.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 4754,
+          "imports": [
+            "__future__",
+            "logger",
+            "threading",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/smart_alerts.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 7218,
+          "imports": [
+            "__future__",
+            "core",
+            "core.status_bridge",
+            "os",
+            "pathlib",
+            "signal",
+            "subprocess",
+            "sys",
+            "time",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/bot_process.py",
+          "risky_calls": [
+            {
+              "call": "subprocess.Popen",
+              "line": 79
+            }
+          ],
+          "risky_imports": [
+            "subprocess"
+          ],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 88,
+          "imports": [],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/trend_engine.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 13630,
+          "imports": [
+            "__future__",
+            "ai.foundation_models",
+            "ai.neural_parent_brain",
+            "core.circuit_breaker",
+            "core.engine",
+            "core.quality_gate_live",
+            "core.runtime_config",
+            "core.status_bridge",
+            "core.trade_journal",
+            "logger",
+            "logging",
+            "risk.risk_manager",
+            "time",
+            "trading.strategy_policy",
+            "typing"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/engine_v10.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 1164,
+          "imports": [
+            "datetime"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/core/health_monitor.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        },
+        {
+          "bytes": 3263,
+          "imports": [
+            "datetime",
+            "logging",
+            "logging.handlers",
+            "os"
+          ],
+          "label": "TAFA_X_ULTIMATE_CONTROL_PANEL_CORRECTED.zip:TAFA_X_ULTIMATE_FINAL/logger.py",
+          "risky_calls": [],
+          "risky_imports": [],
+          "syntax": "parsed"
+        }
+      ],
+      "python_sources_audited": 162,
+      "python_sources_skipped_size": [],
+      "runtime_artifact_count": 7,
+      "runtime_artifact_examples": [
+        "TAFA_X_ULTIMATE_FINAL/.env.elite-net5-paper.example",
+        "TAFA_X_ULTIMATE_FINAL/tafa_v7.db",
+        "TAFA_X_ULTIMATE_FINAL/.env.paper-demo.example",
+        "TAFA_X_ULTIMATE_FINAL/logs/tafa_v10.log",
+        "TAFA_X_ULTIMATE_FINAL/.env.elite-final-paper.example",
+        "TAFA_X_ULTIMATE_FINAL/.env.example",
+        "TAFA_X_ULTIMATE_FINAL/.env.local-model-paper.example"
+      ],
+      "sha256": "2023f4d9f647dcdc41c48fd2e366b43e8f2451d78bdc9f9456ea05afbd5cbda1",
+      "unsafe_member_paths": []
+    }
+  ],
+  "audit_mode": "static_only_no_execution"
+}

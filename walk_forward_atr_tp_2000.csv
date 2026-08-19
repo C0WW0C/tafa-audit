@@ -1,0 +1,5 @@
+timeframe,status,train_bars,test_bars,atr_stop,take_profit_pct,train_trades,train_pnl_usdc,train_profit_factor,test_trades,test_pnl_usdc,test_profit_factor,test_max_drawdown_pct
+5m,rejected_insufficient_train_evidence,1200,800,,,,,,,,,
+15m,rejected_insufficient_train_evidence,1200,800,,,,,,,,,
+1H,rejected_insufficient_train_evidence,1200,800,,,,,,,,,
+4H,rejected_insufficient_train_evidence,1200,800,,,,,,,,,

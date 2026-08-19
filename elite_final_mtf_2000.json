@@ -1,0 +1,165 @@
+{
+  "capital_per_timeframe": 500.0,
+  "bars_requested": 2000,
+  "symbol": "BTC-USDC",
+  "results": {
+    "5m": {
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "5m",
+      "bars": 2000,
+      "trades": 0,
+      "winrate_pct": 0.0,
+      "total_pnl": 0,
+      "final_equity": 500.0,
+      "return_pct": 0.0,
+      "max_drawdown_pct": 0.0,
+      "avg_win": 0.0,
+      "avg_loss": 0.0,
+      "profit_factor": null,
+      "exit_reasons": {
+        "SL": 0,
+        "TP": 0,
+        "SIGNAL": 0,
+        "EOD": 0
+      },
+      "learner_weights": {
+        "ema_cross": 0.25,
+        "rsi_filter": 0.25,
+        "momentum": 0.25,
+        "volume": 0.25
+      },
+      "target_tp_pct": 1.8,
+      "net_target_usd": 5.0,
+      "net_target_reached": false,
+      "from": "1785880800000",
+      "to": "1786480500000"
+    },
+    "15m": {
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "15m",
+      "bars": 2000,
+      "trades": 1,
+      "winrate_pct": 0.0,
+      "total_pnl": -0.5,
+      "final_equity": 499.5,
+      "return_pct": -0.1,
+      "max_drawdown_pct": 0.12,
+      "avg_win": 0.0,
+      "avg_loss": -0.5,
+      "profit_factor": 0.0,
+      "exit_reasons": {
+        "SL": 1,
+        "TP": 0,
+        "SIGNAL": 0,
+        "EOD": 0
+      },
+      "learner_weights": {
+        "ema_cross": 0.25,
+        "rsi_filter": 0.25,
+        "momentum": 0.25,
+        "volume": 0.25
+      },
+      "target_tp_pct": 1.8,
+      "net_target_usd": 5.0,
+      "net_target_reached": false,
+      "from": "1784680200000",
+      "to": "1786479300000"
+    },
+    "1H": {
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "1H",
+      "bars": 2000,
+      "trades": 10,
+      "winrate_pct": 50.0,
+      "total_pnl": 0.04,
+      "final_equity": 500.04,
+      "return_pct": 0.01,
+      "max_drawdown_pct": 0.67,
+      "avg_win": 1.02,
+      "avg_loss": -1.01,
+      "profit_factor": 1.009,
+      "exit_reasons": {
+        "SL": 5,
+        "TP": 4,
+        "SIGNAL": 1,
+        "EOD": 0
+      },
+      "learner_weights": {
+        "ema_cross": 0.25,
+        "rsi_filter": 0.25,
+        "momentum": 0.25,
+        "volume": 0.25
+      },
+      "target_tp_pct": 1.8,
+      "net_target_usd": 5.0,
+      "net_target_reached": false,
+      "from": "1779278400000",
+      "to": "1786474800000"
+    },
+    "4H": {
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "4H",
+      "bars": 2000,
+      "trades": 27,
+      "winrate_pct": 44.44,
+      "total_pnl": -10.72,
+      "final_equity": 489.28,
+      "return_pct": -2.14,
+      "max_drawdown_pct": 2.21,
+      "avg_win": 1.22,
+      "avg_loss": -1.69,
+      "profit_factor": 0.577,
+      "exit_reasons": {
+        "SL": 14,
+        "TP": 12,
+        "SIGNAL": 1,
+        "EOD": 0
+      },
+      "learner_weights": {
+        "ema_cross": 0.25,
+        "rsi_filter": 0.25,
+        "momentum": 0.25,
+        "volume": 0.25
+      },
+      "target_tp_pct": 1.8,
+      "net_target_usd": 5.0,
+      "net_target_reached": false,
+      "from": "1757678400000",
+      "to": "1786464000000"
+    }
+  },
+  "dataset_manifest": {
+    "5m": {
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_5m_2000.csv",
+      "bars": 2000,
+      "from": "1785880800000",
+      "to": "1786480500000",
+      "source": "okx-public-history"
+    },
+    "15m": {
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_15m_2000.csv",
+      "bars": 2000,
+      "from": "1784680200000",
+      "to": "1786479300000",
+      "source": "okx-public-history"
+    },
+    "1H": {
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_1H_2000.csv",
+      "bars": 2000,
+      "from": "1779278400000",
+      "to": "1786474800000",
+      "source": "okx-public-history"
+    },
+    "4H": {
+      "path": "/home/ubuntu/tafa_x_ultimate/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_4H_2000.csv",
+      "bars": 2000,
+      "from": "1757678400000",
+      "to": "1786464000000",
+      "source": "okx-public-history"
+    }
+  }
+}

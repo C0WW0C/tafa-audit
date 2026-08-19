@@ -1,0 +1,148 @@
+{
+  "datasets": [
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_15m_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1784680200000,
+      "to_ts": 1786479300000,
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "15m",
+      "content_hash": "50a647c35ff7b38911912a8a19f7bc450045e104a1c80c4d37dfd3c3fee2caff"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_1H_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1779292800000,
+      "to_ts": 1786489200000,
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "1H",
+      "content_hash": "35f33fef979c9582a2fedc3602a47c1d65b88274f0b92d7c5a53659700602bde"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_4H_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1757692800000,
+      "to_ts": 1786478400000,
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "4H",
+      "content_hash": "7f9049272ff9c26b4538963f0d9fe67b609863dd000936ebfcbff738cb766274"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_BTC-USDC_5m_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1785880800000,
+      "to_ts": 1786480500000,
+      "source": "okx-public-history",
+      "symbol": "BTC-USDC",
+      "timeframe": "5m",
+      "content_hash": "efbbecefa5aac5a4d3179ba54ca2b17fb911f7c7b5ceb1ce754ce854c08e6848"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_15m_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1784692800000,
+      "to_ts": 1786491900000,
+      "source": "okx-public-history",
+      "symbol": "ETH-USDC",
+      "timeframe": "15m",
+      "content_hash": "0f74bfe9085d9859911778ac1afaebdc64f24d1627c23a08d3f35afa34d82e96"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_1H_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1779292800000,
+      "to_ts": 1786489200000,
+      "source": "okx-public-history",
+      "symbol": "ETH-USDC",
+      "timeframe": "1H",
+      "content_hash": "c945db848cf4111f796ecbab1cb1145cb9f4b902e62986b041997baf81462569"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_4H_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1757692800000,
+      "to_ts": 1786478400000,
+      "source": "okx-public-history",
+      "symbol": "ETH-USDC",
+      "timeframe": "4H",
+      "content_hash": "6bef687f20a2b0e2f8928398832a67a07ee744df4d20a49d9b726e9e714970a2"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_ETH-USDC_5m_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1785893100000,
+      "to_ts": 1786492800000,
+      "source": "okx-public-history",
+      "symbol": "ETH-USDC",
+      "timeframe": "5m",
+      "content_hash": "e6612004cc3750f849d01eab5cf4a17994d61a3c603e0693e37c7434300c0d67"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_15m_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1784692800000,
+      "to_ts": 1786491900000,
+      "source": "okx-public-history",
+      "symbol": "SOL-USDC",
+      "timeframe": "15m",
+      "content_hash": "11a29010e47ebeb8a196dd016712a4e5ffee37f298475b66b30a9d58092e5296"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_1H_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1779292800000,
+      "to_ts": 1786489200000,
+      "source": "okx-public-history",
+      "symbol": "SOL-USDC",
+      "timeframe": "1H",
+      "content_hash": "c979322d1ba983374dca28136a9538bff50dca42a70d617e595994b3843ca5bb"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_4H_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1757692800000,
+      "to_ts": 1786478400000,
+      "source": "okx-public-history",
+      "symbol": "SOL-USDC",
+      "timeframe": "4H",
+      "content_hash": "32f0086ea75daf0e08a820fa16e9876893b73297fec1d5ce600d3b1b9c760650"
+    },
+    {
+      "path": "/home/ubuntu/tafa_full_audit_work/TAFA_X_ULTIMATE_FINAL/data/market/okx_SOL-USDC_5m_2000.csv",
+      "status": "valid",
+      "errors": [],
+      "bars": 2000,
+      "from_ts": 1785893100000,
+      "to_ts": 1786493100000,
+      "source": "okx-public-history",
+      "symbol": "SOL-USDC",
+      "timeframe": "5m",
+      "content_hash": "d75a78aae3992fe175846c5cd40ab8e8d57afcec6f6090d852f32c67ad9f8380"
+    }
+  ]
+}

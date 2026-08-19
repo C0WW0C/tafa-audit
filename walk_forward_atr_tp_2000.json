@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "symbol": "BTC-USDC",
+    "timeframes": [
+      "5m",
+      "15m",
+      "1H",
+      "4H"
+    ],
+    "bars_per_timeframe": 2000,
+    "train_ratio": 0.6,
+    "fee_bps_per_side": 8.0,
+    "capital_per_timeframe": 500.0,
+    "position_fraction": 0.15,
+    "train_selection_grid": {
+      "atr_stop": [
+        1.0,
+        1.2,
+        1.5,
+        2.0
+      ],
+      "take_profit_pct": [
+        1.4,
+        1.8,
+        2.2
+      ]
+    },
+    "acceptance_gate": {
+      "min_train_profit_factor": 1.0,
+      "min_test_trades": 5,
+      "min_test_profit_factor": 1.1,
+      "max_test_drawdown_pct": 2.0,
+      "positive_net_pnl_required": true
+    },
+    "warning": "Out-of-sample acceptance is evidence for paper research only, not a live-trading approval."
+  },
+  "results": [
+    {
+      "timeframe": "5m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1785880800000",
+        "to": "1786240500000"
+      },
+      "test_period": {
+        "from": "1786240800000",
+        "to": "1786480500000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ]
+    },
+    {
+      "timeframe": "15m",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1784680200000",
+        "to": "1785759300000"
+      },
+      "test_period": {
+        "from": "1785760200000",
+        "to": "1786479300000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 0,
+            "net_pnl_usdc": 0,
+            "return_pct": 0.0,
+            "final_equity": 500.0,
+            "max_drawdown_pct": 0.0,
+            "winrate_pct": 0.0,
+            "profit_factor": null,
+            "exit_reasons": {
+              "SL": 0,
+              "TP": 0,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ]
+    },
+    {
+      "timeframe": "1H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1779278400000",
+        "to": "1783594800000"
+      },
+      "test_period": {
+        "from": "1783598400000",
+        "to": "1786474800000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 2.2,
+          "train": {
+            "trades": 7,
+            "net_pnl_usdc": 0.3,
+            "return_pct": 0.06,
+            "final_equity": 500.3,
+            "max_drawdown_pct": 0.57,
+            "winrate_pct": 42.86,
+            "profit_factor": 1.071,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 3,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 9,
+            "net_pnl_usdc": -0.33,
+            "return_pct": -0.07,
+            "final_equity": 499.67,
+            "max_drawdown_pct": 0.45,
+            "winrate_pct": 33.33,
+            "profit_factor": 0.918,
+            "exit_reasons": {
+              "SL": 6,
+              "TP": 3,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 2.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 8,
+            "net_pnl_usdc": -0.56,
+            "return_pct": -0.11,
+            "final_equity": 499.44,
+            "max_drawdown_pct": 0.58,
+            "winrate_pct": 50.0,
+            "profit_factor": 0.868,
+            "exit_reasons": {
+              "SL": 4,
+              "TP": 4,
+              "SIGNAL": 0,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ]
+    },
+    {
+      "timeframe": "4H",
+      "train_bars": 1200,
+      "test_bars": 800,
+      "train_period": {
+        "from": "1757678400000",
+        "to": "1774944000000"
+      },
+      "test_period": {
+        "from": "1774958400000",
+        "to": "1786464000000"
+      },
+      "candidate_count": 12,
+      "selection": null,
+      "status": "rejected_insufficient_train_evidence",
+      "top_train_candidates": [
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": -2.39,
+            "return_pct": -0.48,
+            "final_equity": 497.61,
+            "max_drawdown_pct": 1.26,
+            "winrate_pct": 43.75,
+            "profit_factor": 0.73,
+            "exit_reasons": {
+              "SL": 7,
+              "TP": 7,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.0,
+          "take_profit_pct": 1.8,
+          "train": {
+            "trades": 15,
+            "net_pnl_usdc": -3.56,
+            "return_pct": -0.71,
+            "final_equity": 496.44,
+            "max_drawdown_pct": 1.48,
+            "winrate_pct": 33.33,
+            "profit_factor": 0.631,
+            "exit_reasons": {
+              "SL": 8,
+              "TP": 5,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        },
+        {
+          "atr_stop": 1.2,
+          "take_profit_pct": 1.4,
+          "train": {
+            "trades": 16,
+            "net_pnl_usdc": -3.62,
+            "return_pct": -0.72,
+            "final_equity": 496.38,
+            "max_drawdown_pct": 1.5,
+            "winrate_pct": 43.75,
+            "profit_factor": 0.64,
+            "exit_reasons": {
+              "SL": 7,
+              "TP": 7,
+              "SIGNAL": 2,
+              "EOD": 0
+            }
+          },
+          "train_eligible": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural AI · Trading Dashboard · TAFA</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- Fallback vendor local (offline / réseau restreint) -->
+  <script src="vendor/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #080c10;
+      --panel: #10181e;
+      --panel2: #19242c;
+      --line: #1e323a;
+      --text: #d0e8e4;
+      --muted: #5f8286;
+      --lime: #6eff3a;
+      --cyan: #00d4ff;
+      --amber: #ffa840;
+      --red: #ff1a3a;
+      --purple: #a855f7;
+      --sans: 'Courier New', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      padding: 16px;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand { font-size: 18px; font-weight: bold; color: var(--cyan); letter-spacing: 0.1em; }
+    .brand small { font-size: 12px; color: var(--muted); font-weight: normal; }
+    .status { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .status .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .dot.green { background: var(--lime); box-shadow: 0 0 10px var(--lime); }
+    .dot.red { background: var(--red); box-shadow: 0 0 10px var(--red); }
+    .dot.amber { background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 16px;
+      background: var(--panel);
+      border-radius: 6px 6px 0 0;
+      overflow-x: auto;
+    }
+    .tabs button {
+      flex: 1;
+      border: none;
+      border-right: 1px solid var(--line);
+      background: #0a1419;
+      color: var(--muted);
+      padding: 10px 12px;
+      font: 11px var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tabs button:last-child { border-right: none; }
+    .tabs button:hover { background: #112129; color: var(--text); }
+    .tabs button.active { background: var(--panel2); color: var(--cyan); border-bottom: 2px solid var(--cyan); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      padding: 16px;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+      margin-bottom: 16px;
+    }
+    .panel h2 {
+      font-size: 12px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .panel h2 small { color: var(--muted); font-size: 10px; font-weight: normal; }
+
+    .kpi {
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(0,0,0,0.3);
+    }
+    .kpi span { font-size: 9px; color: var(--muted); text-transform: uppercase; }
+    .kpi b { font-size: 16px; color: var(--cyan); margin-top: 2px; }
+    .kpi .green { color: var(--lime); }
+    .kpi .red { color: var(--red); }
+    .kpi .purple { color: var(--purple); }
+
+    .chart-container { height: 220px; position: relative; }
+    .chart-container canvas { width: 100%; height: 100%; }
+
+    .field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+    .field label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    input, select {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #0a1419;
+      color: var(--text);
+      padding: 6px 10px;
+      font: 12px var(--sans);
+      outline: none;
+      width: 100%;
+    }
+    input:focus, select:focus { border-color: var(--cyan); }
+
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #0d1a20;
+      color: var(--text);
+      padding: 6px 16px;
+      font: 11px var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn:hover { border-color: var(--cyan); background: #123139; }
+    .btn.buy { border-color: var(--lime); color: var(--lime); background: rgba(110, 255, 58, 0.05); }
+    .btn.sell { border-color: var(--red); color: var(--red); background: rgba(255, 26, 58, 0.05); }
+    .btn.close { border-color: var(--amber); color: var(--amber); }
+    .btn.purple { border-color: var(--purple); color: var(--purple); background: rgba(168, 85, 247, 0.05); }
+    .btn.danger { border-color: var(--red); color: var(--red); background: rgba(255, 26, 58, 0.05); }
+
+    .table-wrap { overflow-x: auto; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+    th { color: var(--muted); font-size: 9px; text-transform: uppercase; }
+    .buy { color: var(--lime); }
+    .sell { color: var(--red); }
+    .win { color: var(--lime); }
+    .loss { color: var(--red); }
+
+    @media (max-width: 800px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .grid-4 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .tabs button { font-size: 9px; padding: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">🧠 NEURAL AI · TRADER <small>v2.0 · TAFA</small></div>
+    <div class="status">
+      <span class="dot green" id="statusDot"></span>
+      <span id="statusText">Connexion...</span>
+      <span style="color:var(--muted);font-size:10px;">|</span>
+      <span id="symbolDisplay">BTC-USDT</span>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="active" data-tab="dashboard">📊 Dashboard</button>
+    <button data-tab="brain">🧠 Cerveau</button>
+    <button data-tab="backtest">📈 Backtest</button>
+    <button data-tab="ai">🤖 Module AI</button>
+    <button data-tab="tafa-config">⚙️ Config TAFA</button>
+  </div>
+
+  <!-- ==================== TAB 1 : DASHBOARD ==================== -->
+  <div class="tab-content active" id="tab-dashboard">
+    <div class="grid-4" style="margin-bottom:16px;">
+      <div class="kpi"><span>Prix OKX</span><b id="kpiPrice">—</b></div>
+      <div class="kpi"><span>Capital</span><b id="kpiCapital">—</b></div>
+      <div class="kpi"><span>P&L Session</span><b id="kpiPnl" class="green">—</b></div>
+      <div class="kpi"><span>Positions</span><b id="kpiPositions">0</b></div>
+      <div class="kpi"><span>Signal Neurone</span><b id="kpiSignal" style="color:var(--amber);">HOLD</b></div>
+      <div class="kpi"><span>Confiance</span><b id="kpiConfidence" style="color:var(--purple);">—</b></div>
+      <div class="kpi"><span>Drawdown</span><b id="kpiDrawdown" style="color:var(--muted);">—</b></div>
+      <div class="kpi"><span>Cycle</span><b id="kpiCycle">0</b></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2>Graphique <small id="chartInfo">BTC-USDT · 15m</small></h2>
+        <div class="chart-container"><canvas id="priceChart"></canvas></div>
+      </div>
+      <div class="panel">
+        <h2>Portefeuille & Trading</h2>
+        <div class="grid-2" style="gap:8px;">
+          <div class="field"><label>Capital initial</label><input type="number" value="500" id="capitalInput" step="100"></div>
+          <div class="field"><label>Taille (BTC)</label><input type="number" value="0.01" id="sizeInput" step="0.001"></div>
+          <div class="field"><label>Stop-loss (%)</label><input type="number" value="2.0" id="slInput" step="0.1"></div>
+          <div class="field"><label>Take-profit (%)</label><input type="number" value="4.0" id="tpInput" step="0.1"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+          <button class="btn buy" id="btnBuy">📈 ACHAT</button>
+          <button class="btn sell" id="btnSell">📉 VENTE</button>
+          <button class="btn close" id="btnClose">🔒 FERMER TOUT</button>
+          <button class="btn" id="btnReset">↺ RÉINITIALISER</button>
+        </div>
+        <div style="margin-top:8px;font-size:11px;color:var(--muted);" id="tradeStatus">Prêt.</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2>Positions ouvertes</h2>
+        <div class="table-wrap">
+          <table><thead><tr><th>Symbole</th><th>Direction</th><th>Entrée</th><th>Prix actuel</th><th>P&L</th><th>Action</th></tr></thead>
+          <tbody id="positionsTable"></tbody></table>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Historique des trades</h2>
+        <div class="table-wrap">
+          <table><thead><tr><th>Date</th><th>Direction</th><th>Prix entrée</th><th>Prix sortie</th><th>P&L</th></tr></thead>
+          <tbody id="historyTable"></tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TAB 5 : CONFIG TAFA ==================== -->
+  <div class="tab-content" id="tab-tafa-config">
+    <div class="grid-2">
+      <div class="panel">
+        <h2>⚙️ Configuration Générale <small>bot réel</small></h2>
+        <div class="field"><label>Capital initial</label><input type="number" id="tafaCapital" value="500" step="50"></div>
+        <div class="field"><label>Order Size USD</label><input type="number" id="tafaOrderSize" value="100" step="10"></div>
+        <div class="field"><label>Symbole</label><input type="text" id="tafaSymbol" value="BTC-USDC"></div>
+        <div class="field"><label>Timeframe</label><select id="tafaTimeframe"><option value="5m">5m</option><option value="15m">15m</option><option value="1h">1h</option><option value="4h" selected>4h</option><option value="1d">1d</option></select></div>
+        <button class="btn" id="saveTafaGeneral">💾 Appliquer Général</button>
+      </div>
+
+      <div class="panel">
+        <h2>🛡️ Risk Manager <small>config réelle</small></h2>
+        <div class="field"><label>Risque par trade (%)</label><input type="number" id="tafaRiskPct" value="2.0" step="0.1"></div>
+        <div class="field"><label>Stop Loss (%)</label><input type="number" id="tafaSl" value="1.2" step="0.1"></div>
+        <div class="field"><label>Take Profit Ratio</label><input type="number" id="tafaTpRatio" value="3.0" step="0.1"></div>
+        <div class="field"><label>Trailing Stop (%)</label><input type="number" id="tafaTrail" value="0.8" step="0.1"></div>
+        <button class="btn" id="saveTafaRisk">💾 Appliquer Risk</button>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2>📈 Stratégie <small>indicateurs</small></h2>
+        <div class="field"><label>EMA Fast</label><input type="number" id="tafaEmaFast" value="12"></div>
+        <div class="field"><label>EMA Slow</label><input type="number" id="tafaEmaSlow" value="55"></div>
+        <div class="field"><label>RSI Period</label><input type="number" id="tafaRsiPeriod" value="14"></div>
+        <div class="field"><label>RSI Max Entry</label><input type="number" id="tafaRsiMax" value="60"></div>
+        <div class="field"><label>Confirm Bars</label><input type="number" id="tafaConfirmBars" value="3"></div>
+        <button class="btn" id="saveTafaStrategy">💾 Appliquer Stratégie</button>
+      </div>
+
+      <div class="panel">
+        <h2>🧠 IA <small>paramètres</small></h2>
+        <div class="field"><label>IA Activée</label><select id="tafaAiOn"><option value="true">Oui</option><option value="false">Non</option></select></div>
+        <div class="field"><label>Confiance minimale</label><input type="number" id="tafaMinConf" value="0.40" step="0.05"></div>
+        <div class="field"><label>Epochs</label><input type="number" id="tafaEpochs" value="50"></div>
+        <div class="field"><label>Foundation Models</label><select id="tafaFoundationOn"><option value="false">Désactivé</option><option value="true">Activé</option></select></div>
+        <button class="btn" id="saveTafaIA">💾 Appliquer IA</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>🔄 État du bot</h2>
+      <div class="grid-3">
+        <div class="kpi"><span>MODE</span><b id="tafaMode">—</b></div>
+        <div class="kpi"><span>RUNNING</span><b id="tafaRunning">—</b></div>
+        <div class="kpi"><span>CYCLE</span><b id="tafaCycle">0</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const $ = id => document.getElementById(id);
+
+    const state = {
+      symbol: 'BTC-USDC',
+      timeframe: '4h',
+      capital: 500,
+      equity: 500,
+      pnl: 0,
+      price: 0,
+      signal: 'HOLD',
+      confidence: 0,
+      regime: '—',
+      drawdown: 0,
+      canTrade: true,
+      running: false,
+      mode: 'PAPER',
+      cycle: 0,
+      candles: [],
+      equityCurve: [],
+      positions: [],
+      history: [],
+      sseOk: false,
+    };
+
+    // ── Helpers ────────────────────────────────────────────────────────────────
+    async function fetchJSON(path, options = {}) {
+      try {
+        const res = await fetch(path, { cache: 'no-store', ...options });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      } catch (e) {
+        console.warn(`[API] ${path} → ${e.message}`);
+        return null;
+      }
+    }
+
+    // ── Appliquer les données status → state ───────────────────────────────────
+    function applyStatus(data) {
+      if (!data || typeof data !== 'object') return;
+      state.running    = Boolean(data.running);
+      state.mode       = data.mode || 'PAPER';
+      state.price      = data.last_price || 0;
+      state.signal     = data.last_signal || (data.ai && data.ai.signal) || 'HOLD';
+      state.confidence = (data.ai && data.ai.confidence) || 0;
+      state.regime     = (data.ai && data.ai.regime) || data.regime || '—';
+      state.drawdown   = data.drawdown || 0;
+      state.canTrade   = data.can_trade !== undefined ? data.can_trade : true;
+      state.cycle      = data.cycle || 0;
+      const paper      = data.paper || {};
+      state.equity     = paper.equity  || (data.performance && data.performance.equity)      || state.equity;
+      state.capital    = paper.initial_capital || state.capital;
+      state.pnl        = paper.session_pnl    || (data.performance && data.performance.session_pnl) || 0;
+    }
+
+    // ── SSE temps réel (/api/stream) ──────────────────────────────────────────
+    function connectSSE() {
+      const es = new EventSource('/api/stream');
+      es.addEventListener('status', e => {
+        try {
+          applyStatus(JSON.parse(e.data));
+          state.sseOk = true;
+          updateDashboard();
+        } catch (_) {}
+      });
+      es.onerror = () => {
+        state.sseOk = false;
+        es.close();
+        // Reconnexion après 5s si SSE coupe
+        setTimeout(connectSSE, 5000);
+      };
+    }
+
+    // ── Polling fallback (candles + trades toutes les 4s) ─────────────────────
+    async function pollSlowData() {
+      // Si SSE fonctionne, pas besoin de re-fetcher /api/status
+      if (!state.sseOk) {
+        const data = await fetchJSON('/api/status');
+        if (data) { applyStatus(data); updateDashboard(); }
+      }
+
+      // Trades (toutes les 4s)
+      const tradesData = await fetchJSON('/api/trades?limit=20');
+      if (Array.isArray(tradesData)) state.history = tradesData;
+      else state.history = (tradesData && tradesData.trades) || [];
+
+      // Candles (toutes les 4s)
+      const candlesData = await fetchJSON(`/api/candles?symbol=${state.symbol}&bar=${state.timeframe}&limit=60`);
+      if (candlesData && Array.isArray(candlesData.candles)) state.candles = candlesData.candles;
+
+      // Equity curve (toutes les 4s)
+      const equityData = await fetchJSON('/api/equity').catch(() => null);
+      if (equityData && equityData.equity_curve) state.equityCurve = equityData.equity_curve;
+
+      updateDashboard();
+    }
+
+    // ── Rendu ─────────────────────────────────────────────────────────────────
+    function updateDashboard() {
+      $('kpiPrice').textContent      = state.price   ? '$' + state.price.toFixed(2) : '—';
+      $('kpiCapital').textContent    = '$' + Number(state.capital).toFixed(2);
+      const pnlEl = $('kpiPnl');
+      pnlEl.textContent  = (state.pnl >= 0 ? '+' : '') + Number(state.pnl).toFixed(2);
+      pnlEl.className    = state.pnl >= 0 ? 'green' : 'red';
+      $('kpiPositions').textContent  = state.positions.length;
+      $('kpiSignal').textContent     = state.signal;
+      $('kpiSignal').style.color     = state.signal === 'BUY' ? 'var(--lime)' : state.signal === 'SELL' ? 'var(--red)' : 'var(--amber)';
+      $('kpiConfidence').textContent = (Number(state.confidence) * 100).toFixed(1) + '%';
+      $('kpiDrawdown').textContent   = (Number(state.drawdown)   * 100).toFixed(2) + '%';
+      $('kpiCycle').textContent      = state.cycle;
+
+      $('statusDot').className    = 'dot ' + (state.running ? 'green' : 'amber');
+      $('statusText').textContent = state.running ? 'Bot actif' : 'Bot arrêté';
+      $('symbolDisplay').textContent = state.symbol;
+
+      $('tafaMode').textContent    = state.mode;
+      $('tafaRunning').textContent = state.running ? 'OUI' : 'NON';
+      $('tafaCycle').textContent   = state.cycle;
+
+      // Régime (si l'élément existe dans le HTML)
+      const regEl = $('kpiRegime');
+      if (regEl) regEl.textContent = state.regime;
+
+      // Historique trades
+      const tbody = $('historyTable');
+      if (tbody) {
+        if (!state.history.length) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--muted);">Aucun trade</td></tr>';
+        } else {
+          tbody.innerHTML = '';
+          state.history.slice(0, 20).forEach(t => {
+            const tr = document.createElement('tr');
+            const pnl = Number(t.pnl || 0);
+            tr.innerHTML = `
+              <td>${t.timestamp || t.id || '—'}</td>
+              <td class="${t.side === 'BUY' ? 'buy' : 'sell'}">${t.side || '—'}</td>
+              <td>$${Number(t.price || 0).toFixed(2)}</td>
+              <td>${t.qty != null ? Number(t.qty).toFixed(6) : '—'}</td>
+              <td class="${pnl >= 0 ? 'win' : 'loss'}">${pnl >= 0 ? '+' : ''}${pnl.toFixed(2)}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      }
+
+      // Graphique bougies (canvas 2D)
+      const canvas = $('priceChart');
+      if (canvas && state.candles.length) {
+        const ctx = canvas.getContext('2d');
+        const W = canvas.parentElement ? canvas.parentElement.clientWidth  : canvas.width;
+        const H = canvas.parentElement ? canvas.parentElement.clientHeight : canvas.height;
+        if (W > 0 && H > 0) {
+          canvas.width  = W;
+          canvas.height = H;
+          ctx.clearRect(0, 0, W, H);
+          const closes = state.candles.map(c => Number(c.close));
+          const minC   = Math.min(...closes);
+          const maxC   = Math.max(...closes);
+          const range  = maxC - minC || 1;
+          const step   = W / Math.max(1, closes.length - 1);
+          ctx.beginPath();
+          closes.forEach((c, i) => {
+            const x = i * step;
+            const y = H - ((c - minC) / range) * (H * 0.9) - H * 0.05;
+            if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          });
+          ctx.strokeStyle = '#00d4ff';
+          ctx.lineWidth   = 2;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // ── Config ────────────────────────────────────────────────────────────────
+    async function saveTafaConfig(payload) {
+      let res;
+      try {
+        res = await fetch('/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          cache: 'no-store',
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.error('❌ Réseau — impossible de joindre /api/config:', e.message);
+        return null;
+      }
+      let data = null;
+      try { data = await res.json(); } catch (_) {}
+
+      // ✅ FIX: utiliser res.status (et non r.status qui était undefined)
+      // Ancienne logique supprimée : if (r.status !== 422 && ...) { ... }
+      // Prix live via flux public OKX: wss://ws.okx.com:8443/ws/v5/public (lecture seule)
+      if (res.status === 422 || (data && data.rejected && Object.keys(data.rejected).length)) {
+        const rejectedRaw = (data && data.rejected) ? data.rejected : {};
+        const details = Object.entries(rejectedRaw).map(([k, v]) => `• ${k}: ${v}`).join('\n');
+        if (Object.keys(rejectedRaw).length > 0) console.warn('Configuration partiellement refusée :\n' + details);
+        return data;
+      }
+      if (res.ok && data && data.ok) {
+        console.info('✅ Configuration appliquée au bot');
+        return data;
+      }
+      console.error('❌ Échec de la configuration (HTTP', res.status, ')');
+      return null;
+    }
+
+    // ── Onglets ───────────────────────────────────────────────────────────────
+    document.querySelectorAll('.tabs button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        $(`tab-${btn.dataset.tab}`).classList.add('active');
+      });
+    });
+
+    // ── Formulaires config ────────────────────────────────────────────────────
+    const _btn = id => { const el = $(id); if (el) el.addEventListener('click', handler(id)); };
+
+    function handler(id) {
+      const map = {
+        'saveTafaGeneral':  () => saveTafaConfig({ capital: parseFloat($('tafaCapital').value), order_size_usd: parseFloat($('tafaOrderSize').value), symbol: $('tafaSymbol').value, timeframe: $('tafaTimeframe').value }),
+        'saveTafaRisk':     () => saveTafaConfig({ risk_per_trade_pct: parseFloat($('tafaRiskPct').value), sl_pct: parseFloat($('tafaSl').value), tp_ratio: parseFloat($('tafaTpRatio').value), trail_pct: parseFloat($('tafaTrail').value) }),
+        'saveTafaStrategy': () => saveTafaConfig({ ma_fast: parseInt($('tafaEmaFast').value), ma_slow: parseInt($('tafaEmaSlow').value), rsi_period: parseInt($('tafaRsiPeriod').value), rsi_max: parseFloat($('tafaRsiMax').value), confirm_bars: parseInt($('tafaConfirmBars').value) }),
+        'saveTafaIA':       () => saveTafaConfig({ ai_on: $('tafaAiOn').value === 'true', min_conf: parseFloat($('tafaMinConf').value), epochs: parseInt($('tafaEpochs').value), foundation_models_on: $('tafaFoundationOn').value === 'true' }),
+      };
+      return map[id] || (() => {});
+    }
+
+    ['saveTafaGeneral','saveTafaRisk','saveTafaStrategy','saveTafaIA'].forEach(id => {
+      const el = $(id);
+      if (el) el.addEventListener('click', handler(id));
+    });
+
+    // ── Démarrage ─────────────────────────────────────────────────────────────
+    // SSE pour le statut temps réel
+    connectSSE();
+    // Polling lent pour candles, trades, equity (indépendant du SSE)
+    pollSlowData();
+    setInterval(pollSlowData, 4000);
+  </script>
+</body>
+</html>
+
+
+    async function fetchJSON(path, options = {}) {
+      try {
+        const res = await fetch(path, { cache: 'no-store', ...options });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      } catch (e) {
+        console.warn(`[API] ${path} → ${e.message}`);
+        return null;
+      }
+    }
+
+  </script>
+</body>
+</html>

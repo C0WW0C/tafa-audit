@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>TAFA Desk — TradingView style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="/vendor/lightweight-charts.standalone.production.js"></script>
+<style>
+:root {
+  --bg: #0b0e11;
+  --panel: #131722;
+  --panel2: #1e222d;
+  --border: #2a2e39;
+  --text: #d1d4dc;
+  --muted: #787b86;
+  --green: #26a69a;
+  --green-dim: rgba(38,166,154,.15);
+  --red: #ef5350;
+  --red-dim: rgba(239,83,80,.15);
+  --blue: #2962ff;
+  --yellow: #f0b90b;
+  --accent: #37d4a2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: var(--bg); color: var(--text);
+  font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 13px; overflow: hidden; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, select { font-family: inherit; background: var(--panel2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 4px; padding: 6px 8px; outline: none; }
+input:focus, select:focus { border-color: var(--accent); }
+.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.up { color: var(--green); }
+.dn { color: var(--red); }
+.muted { color: var(--muted); }
+
+/* Layout */
+#app { display: grid; height: 100vh; grid-template-rows: 48px 1fr 220px;
+  grid-template-columns: 1fr 300px 280px; gap: 1px; background: var(--border); }
+
+/* Top bar spans full width */
+#topbar { grid-column: 1 / -1; background: var(--panel); display: flex; align-items: center;
+  padding: 0 12px; gap: 16px; border-bottom: 1px solid var(--border); }
+#topbar .logo { font-weight: 700; letter-spacing: .04em; color: var(--accent); font-size: 14px; }
+#topbar .sym { font-weight: 600; font-size: 15px; }
+#topbar .px { font-size: 18px; font-weight: 600; font-family: "IBM Plex Mono", monospace; }
+#topbar .chip { font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 600; text-transform: uppercase; }
+.chip.paper { background: var(--green-dim); color: var(--green); }
+.chip.live { background: var(--red-dim); color: var(--red); }
+.chip.hold { background: rgba(41,98,255,.15); color: #90caf9; }
+.chip.buy { background: var(--green-dim); color: var(--green); }
+.chip.sell { background: var(--red-dim); color: var(--red); }
+#topbar .spacer { flex: 1; }
+#topbar .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); display: inline-block; margin-right: 6px; }
+#topbar .status-dot.on { background: var(--green); box-shadow: 0 0 6px var(--green); }
+#topbar .status-dot.off { background: var(--red); }
+.btn { padding: 6px 12px; border-radius: 4px; font-weight: 600; font-size: 12px; border: 1px solid var(--border); background: var(--panel2); }
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--accent); color: #0b0e11; border-color: var(--accent); }
+.btn.danger { background: var(--red-dim); color: var(--red); border-color: rgba(239,83,80,.35); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+
+/* Chart panel */
+#chart-panel { background: var(--panel); display: flex; flex-direction: column; min-width: 0; }
+#chart-toolbar { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+#chart-toolbar .tf { padding: 3px 8px; border-radius: 3px; color: var(--muted); font-size: 11px; font-weight: 600; }
+#chart-toolbar .tf.active { background: var(--panel2); color: var(--text); }
+#chart-wrap { flex: 1; position: relative; min-height: 0; padding: 0; }
+#tvChart { width: 100%; height: 100%; }
+#chartSrc { font-size: 10px; color: var(--muted); margin-left: 8px; }
+
+/* Order book */
+#book-panel { background: var(--panel); display: flex; flex-direction: column; min-height: 0; }
+.panel-h { padding: 8px 10px; border-bottom: 1px solid var(--border); font-weight: 600; font-size: 11px;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: flex; justify-content: space-between; }
+#book-body { flex: 1; overflow: auto; font-family: "IBM Plex Mono", monospace; font-size: 12px; }
+.book-row { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 2px 10px; position: relative; }
+.book-row .bg { position: absolute; top: 0; bottom: 0; opacity: .12; pointer-events: none; }
+.book-row.ask .bg { right: 0; background: var(--red); }
+.book-row.bid .bg { left: 0; background: var(--green); }
+.book-row span { z-index: 1; }
+.book-mid { text-align: center; padding: 8px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 14px; background: var(--panel2); }
+.book-hdr { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 4px 10px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
+
+/* Right: signal + ticket */
+#side-panel { background: var(--panel); display: flex; flex-direction: column; min-height: 0; overflow: auto; }
+.kv { display: flex; justify-content: space-between; padding: 6px 10px; border-bottom: 1px solid rgba(42,46,57,.6); }
+.kv .k { color: var(--muted); }
+.kv .v { font-weight: 600; font-family: "IBM Plex Mono", monospace; }
+#ticket { padding: 10px; border-top: 1px solid var(--border); margin-top: auto; }
+#ticket .row { display: flex; gap: 6px; margin-bottom: 8px; }
+#ticket input { flex: 1; width: 100%; }
+#ticket .side-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+#ticket .side-btns button { padding: 10px; border-radius: 4px; font-weight: 700; font-size: 13px; }
+#ticket .buy-btn { background: var(--green); color: #0b0e11; }
+#ticket .sell-btn { background: var(--red); color: #fff; }
+
+/* Bottom blotter */
+#blotter { grid-column: 1 / -1; background: var(--panel); display: flex; flex-direction: column; min-height: 0; }
+#blotter-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); }
+#blotter-tabs button { padding: 8px 14px; color: var(--muted); font-weight: 600; font-size: 12px; border-bottom: 2px solid transparent; }
+#blotter-tabs button.active { color: var(--text); border-bottom-color: var(--accent); }
+#blotter-body { flex: 1; overflow: auto; }
+table.blot { width: 100%; border-collapse: collapse; font-family: "IBM Plex Mono", monospace; font-size: 12px; }
+table.blot th { position: sticky; top: 0; background: var(--panel2); color: var(--muted); text-align: left;
+  padding: 6px 10px; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: .04em; }
+table.blot td { padding: 5px 10px; border-bottom: 1px solid rgba(42,46,57,.5); }
+table.blot tr:hover td { background: rgba(255,255,255,.02); }
+.empty { padding: 24px; text-align: center; color: var(--muted); }
+
+/* Metrics strip under chart toolbar */
+#metrics { display: flex; gap: 16px; padding: 4px 10px 8px; flex-wrap: wrap; }
+#metrics .m { min-width: 90px; }
+#metrics .m .lab { font-size: 10px; color: var(--muted); text-transform: uppercase; }
+#metrics .m .val { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 13px; }
+
+@media (max-width: 1100px) {
+  #app { grid-template-columns: 1fr 260px; grid-template-rows: 48px 1fr 1fr 200px; }
+  #book-panel { grid-column: 2; }
+  #side-panel { grid-column: 1 / -1; grid-row: 3; max-height: 200px; }
+  #blotter { grid-row: 4; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <!-- TOP BAR -->
+  <header id="topbar">
+    <div class="logo">TAFA DESK</div>
+    <div class="sym mono" id="sym">BTC-USDC</div>
+    <div class="px mono" id="lastPx">—</div>
+    <div class="mono" id="pxChg"></div>
+    <span class="chip paper" id="modeChip">PAPER</span>
+    <span class="chip hold" id="sigChip">HOLD</span>
+    <div class="spacer"></div>
+    <div class="muted"><span class="status-dot" id="botDot"></span><span id="botLabel">bot …</span></div>
+    <div class="muted mono" id="ageLabel" style="font-size:11px"></div>
+    <button class="btn primary" id="btnStart">Start</button>
+    <button class="btn danger" id="btnStop">Stop</button>
+    <a class="btn" href="/" title="UI Elite">Elite</a>
+  </header>
+
+  <!-- CHART -->
+  <section id="chart-panel">
+    <div id="chart-toolbar">
+      <span class="tf" data-tf="5m">5m</span>
+      <span class="tf active" data-tf="15m">15m</span>
+      <span class="tf" data-tf="1h">1h</span>
+      <span class="tf" data-tf="4h">4h</span>
+      <span class="tf" data-tf="1d">1D</span>
+      <span id="chartSrc">source —</span>
+      <span class="muted" style="margin-left:auto;font-size:11px">Bougies OHLC (closed)</span>
+    </div>
+    <div id="metrics">
+      <div class="m"><div class="lab">Equity</div><div class="val mono" id="mEq">—</div></div>
+      <div class="m"><div class="lab">Session PnL</div><div class="val mono" id="mPnl">—</div></div>
+      <div class="m"><div class="lab">Return</div><div class="val mono" id="mRet">—</div></div>
+      <div class="m"><div class="lab">Drawdown</div><div class="val mono" id="mDd">—</div></div>
+      <div class="m"><div class="lab">Cycle</div><div class="val mono" id="mCy">—</div></div>
+      <div class="m"><div class="lab">Confiance</div><div class="val mono" id="mCf">—</div></div>
+      <div class="m"><div class="lab">Régime</div><div class="val mono" id="mRg">—</div></div>
+    </div>
+    <div id="chart-wrap"><div id="tvChart"></div></div>
+  </section>
+
+  <!-- ORDER BOOK -->
+  <section id="book-panel">
+    <div class="panel-h"><span>Order Book</span><span class="mono" id="spreadLab">spread —</span></div>
+    <div class="book-hdr"><span>Prix</span><span>Taille</span><span>Total</span></div>
+    <div id="book-body">
+      <div id="asks"></div>
+      <div class="book-mid mono" id="bookMid">—</div>
+      <div id="bids"></div>
+    </div>
+  </section>
+
+  <!-- SIGNAL + TICKET -->
+  <aside id="side-panel">
+    <div class="panel-h">Position & Signal</div>
+    <div class="kv"><span class="k">Signal</span><span class="v" id="sSig">HOLD</span></div>
+    <div class="kv"><span class="k">Position</span><span class="v mono" id="sPos">FLAT</span></div>
+    <div class="kv"><span class="k">Entry</span><span class="v mono" id="sEntry">—</span></div>
+    <div class="kv"><span class="k">Size</span><span class="v mono" id="sSize">—</span></div>
+    <div class="kv"><span class="k">uPnL</span><span class="v mono" id="sUpnl">—</span></div>
+    <div class="kv"><span class="k">Capital</span><span class="v mono" id="sCap">—</span></div>
+    <div class="kv"><span class="k">Risk state</span><span class="v mono" id="sRisk">—</span></div>
+    <div class="kv"><span class="k">WS</span><span class="v mono" id="sWs">—</span></div>
+
+    <div id="ticket">
+      <div class="panel-h" style="border:none;padding:0 0 8px">Ticket paper</div>
+      <div class="row"><input type="number" id="ordAmt" min="5" max="250" step="1" value="25" placeholder="USDC" /></div>
+      <div class="side-btns">
+        <button class="buy-btn" id="btnBuy">ACHETER</button>
+        <button class="sell-btn" id="btnSell">VENDRE</button>
+      </div>
+      <div class="muted" style="margin-top:8px;font-size:11px">Paper only · 5–250 USDC · aucun ordre exchange</div>
+      <div id="ticketMsg" class="muted" style="margin-top:6px;font-size:11px"></div>
+    </div>
+  </aside>
+
+  <!-- BLOTTER -->
+  <section id="blotter">
+    <div id="blotter-tabs">
+      <button class="active" data-tab="trades">Trades</button>
+      <button data-tab="signals">Signaux</button>
+      <button data-tab="manual">Manuels</button>
+    </div>
+    <div id="blotter-body">
+      <table class="blot" id="tblTrades">
+        <thead><tr>
+          <th>Heure</th><th>Symbole</th><th>Côté</th><th>Qty</th><th>Prix</th><th>PnL</th><th>Motif</th>
+        </tr></thead>
+        <tbody id="tbTrades"><tr><td colspan="7" class="empty">Aucun trade</td></tr></tbody>
+      </table>
+      <table class="blot" id="tblSignals" style="display:none">
+        <thead><tr><th>Heure</th><th>Signal</th><th>Conf</th><th>Régime</th><th>Prix</th></tr></thead>
+        <tbody id="tbSignals"><tr><td colspan="5" class="empty">—</td></tr></tbody>
+      </table>
+      <table class="blot" id="tblManual" style="display:none">
+        <thead><tr><th>Heure</th><th>Côté</th><th>Montant</th><th>Statut</th><th>Détail</th></tr></thead>
+        <tbody id="tbManual"><tr><td colspan="5" class="empty">—</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
+  const state = {
+    lastStatus: null,
+    tab: "trades",
+    bar: "15m",
+    symbol: "BTC-USDC",
+  };
+
+  // --- Lightweight Charts (bougies OHLC) ---
+  const chartEl = $("tvChart");
+  const tvChart = LightweightCharts.createChart(chartEl, {
+    layout: {
+      background: { type: "solid", color: "#131722" },
+      textColor: "#787b86",
+      fontFamily: "IBM Plex Sans, system-ui, sans-serif",
+    },
+    grid: {
+      vertLines: { color: "rgba(42,46,57,.55)" },
+      horzLines: { color: "rgba(42,46,57,.55)" },
+    },
+    crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+    rightPriceScale: { borderColor: "#2a2e39" },
+    timeScale: { borderColor: "#2a2e39", timeVisible: true, secondsVisible: false },
+    width: chartEl.clientWidth || 600,
+    height: chartEl.clientHeight || 320,
+  });
+  const candleSeries = tvChart.addCandlestickSeries({
+    upColor: "#26a69a",
+    downColor: "#ef5350",
+    borderUpColor: "#26a69a",
+    borderDownColor: "#ef5350",
+    wickUpColor: "#26a69a",
+    wickDownColor: "#ef5350",
+  });
+  const volSeries = tvChart.addHistogramSeries({
+    priceFormat: { type: "volume" },
+    priceScaleId: "",
+    scaleMargins: { top: 0.82, bottom: 0 },
+  });
+
+  function resizeChart() {
+    const w = chartEl.clientWidth;
+    const h = chartEl.clientHeight;
+    if (w > 0 && h > 0) tvChart.applyOptions({ width: w, height: h });
+  }
+  window.addEventListener("resize", resizeChart);
+  setTimeout(resizeChart, 50);
+
+  async function loadCandles(bar) {
+    state.bar = bar || state.bar;
+    const sym = state.symbol || "BTC-USDC";
+    const url = `/api/candles?symbol=${encodeURIComponent(sym)}&bar=${encodeURIComponent(state.bar)}&limit=250`;
+    let data = null;
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (r.ok) data = await r.json();
+    } catch (e) {}
+    if (!data || !data.candles || !data.candles.length) {
+      $("chartSrc").textContent = "source none";
+      return;
+    }
+    const rows = data.candles
+      .filter((c) => c.time && c.open != null)
+      .map((c) => ({
+        time: c.time,
+        open: c.open,
+        high: c.high,
+        low: c.low,
+        close: c.close,
+      }));
+    const vols = data.candles
+      .filter((c) => c.time)
+      .map((c) => ({
+        time: c.time,
+        value: c.volume || 0,
+        color: c.close >= c.open ? "rgba(38,166,154,.35)" : "rgba(239,83,80,.35)",
+      }));
+    candleSeries.setData(rows);
+    volSeries.setData(vols);
+    tvChart.timeScale().fitContent();
+    $("chartSrc").textContent = `source ${data.source || "?"} · ${data.count || rows.length} barres`;
+  }
+
+  function fmt(n, d = 2) {
+    if (n == null || n === "" || Number.isNaN(Number(n))) return "—";
+    return Number(n).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+  function fmtPx(n) {
+    if (n == null || Number.isNaN(Number(n))) return "—";
+    const x = Number(n);
+    return x >= 1000 ? fmt(x, 1) : fmt(x, 4);
+  }
+  function clsPnL(n) {
+    const v = Number(n);
+    if (Number.isNaN(v) || v === 0) return "";
+    return v > 0 ? "up" : "dn";
+  }
+
+  // --- Status render ---
+  function applyStatus(st) {
+    if (!st || typeof st !== "object") return;
+    state.lastStatus = st;
+    const paper = st.paper || {};
+    const risk = st.risk || {};
+    const ai = st.ai || {};
+    const ws = st.ws || {};
+
+    const sym = st.symbol || paper.symbol || "BTC-USDC";
+    $("sym").textContent = sym;
+
+    const px = st.last_price ?? paper.last_price ?? paper.price;
+    $("lastPx").textContent = fmtPx(px);
+    $("lastPx").className = "px mono";
+
+    const mode = (st.mode || "PAPER").toUpperCase();
+    $("modeChip").textContent = mode;
+    $("modeChip").className = "chip " + (mode.includes("LIVE") ? "live" : "paper");
+
+    const sig = (st.last_signal || ai.signal || "HOLD").toUpperCase();
+    $("sigChip").textContent = sig;
+    $("sigChip").className = "chip " + (sig === "BUY" ? "buy" : sig === "SELL" ? "sell" : "hold");
+    $("sSig").textContent = sig;
+    $("sSig").className = "v " + (sig === "BUY" ? "up" : sig === "SELL" ? "dn" : "");
+
+    const running = !!st.running || (st.state && String(st.state).toUpperCase() === "RUNNING");
+    $("botDot").className = "status-dot " + (running ? "on" : "off");
+    $("botLabel").textContent = running ? "bot running" : "bot stopped";
+
+    const age = st.heartbeat_age_s != null ? Number(st.heartbeat_age_s)
+      : (st.updated_at ? Math.max(0, (Date.now() / 1000) - Number(st.updated_at)) : null);
+    $("ageLabel").textContent = age != null && !Number.isNaN(age) ? age.toFixed(0) + "s" : "";
+
+    const perf = st.performance || {};
+    const eq = paper.equity ?? paper.balance ?? perf.equity ?? st.equity;
+    const cap = paper.initial_capital ?? paper.capital ?? st.capital;
+    const pnl = paper.session_pnl ?? perf.session_pnl ?? (eq != null && cap != null ? eq - cap : null);
+    const ret = paper.session_return_pct ?? perf.session_return_pct ?? (eq != null && cap ? ((eq / cap) - 1) * 100 : null);
+    const dd = st.drawdown ?? risk.drawdown ?? paper.drawdown;
+
+    $("mEq").textContent = fmt(eq, 2);
+    $("mPnl").textContent = (pnl != null && pnl >= 0 ? "+" : "") + fmt(pnl, 2);
+    $("mPnl").className = "val mono " + clsPnL(pnl);
+    $("mRet").textContent = (ret != null ? (ret >= 0 ? "+" : "") + fmt(ret, 2) + "%" : "—");
+    $("mRet").className = "val mono " + clsPnL(ret);
+    $("mDd").textContent = dd != null ? fmt(Number(dd) * (Math.abs(dd) <= 1 ? 100 : 1), 2) + "%" : "—";
+    $("mCy").textContent = st.cycle != null ? st.cycle : "—";
+    $("mCf").textContent = ai.confidence != null ? fmt(Number(ai.confidence) * (ai.confidence <= 1 ? 100 : 1), 1) + "%" : (st.confidence != null ? st.confidence : "—");
+    $("mRg").textContent = ai.regime || st.regime || "—";
+
+    $("sCap").textContent = fmt(cap, 2);
+    $("sRisk").textContent = risk.state || risk.status || st.state || "—";
+    $("sWs").textContent = ws.connected != null ? (ws.connected ? "connected" : "down") : (st.ws_ok ? "ok" : "—");
+
+    // Position
+    const pos = paper.position || paper.positions || st.position;
+    let side = "FLAT", entry = null, size = null, upnl = null;
+    if (pos && typeof pos === "object") {
+      if (Array.isArray(pos) && pos.length) {
+        side = (pos[0].side || "LONG").toUpperCase();
+        entry = pos[0].entry || pos[0].avg_price;
+        size = pos[0].qty || pos[0].size;
+        upnl = pos[0].unrealized_pnl ?? pos[0].upnl;
+      } else if (pos.side || pos.qty || pos.size) {
+        side = String(pos.side || (Number(pos.qty || pos.size) > 0 ? "LONG" : "FLAT")).toUpperCase();
+        entry = pos.entry || pos.avg_price;
+        size = pos.qty || pos.size;
+        upnl = pos.unrealized_pnl ?? pos.upnl;
+      }
+    }
+    if (paper.qty != null && Number(paper.qty) !== 0) {
+      side = Number(paper.qty) > 0 ? "LONG" : "SHORT";
+      size = paper.qty;
+      entry = paper.entry_price || paper.entry;
+      upnl = paper.unrealized_pnl;
+    }
+    $("sPos").textContent = side;
+    $("sPos").className = "v mono " + (side === "LONG" || side === "BUY" ? "up" : side === "SHORT" || side === "SELL" ? "dn" : "");
+    $("sEntry").textContent = fmtPx(entry);
+    $("sSize").textContent = size != null ? fmt(size, 6) : "—";
+    $("sUpnl").textContent = upnl != null ? ((upnl >= 0 ? "+" : "") + fmt(upnl, 2)) : "—";
+    $("sUpnl").className = "v mono " + clsPnL(upnl);
+
+    if (st.symbol) state.symbol = st.symbol;
+  }
+
+  // --- Order book ---
+  function renderBook(book) {
+    if (!book) return;
+    const asks = (book.asks || book.ask || []).slice(0, 8).reverse();
+    const bids = (book.bids || book.bid || []).slice(0, 8);
+    const maxSz = Math.max(
+      1,
+      ...asks.map((r) => Number(r[1] || r.size || 0)),
+      ...bids.map((r) => Number(r[1] || r.size || 0))
+    );
+
+    function row(r, side) {
+      const p = Number(r[0] ?? r.price);
+      const s = Number(r[1] ?? r.size);
+      const tot = Number(r[2] ?? s);
+      const pct = Math.min(100, (s / maxSz) * 100);
+      return `<div class="book-row ${side}"><div class="bg" style="width:${pct}%"></div>
+        <span class="${side === "ask" ? "dn" : "up"}">${fmtPx(p)}</span>
+        <span>${fmt(s, 4)}</span><span class="muted">${fmt(tot, 4)}</span></div>`;
+    }
+    $("asks").innerHTML = asks.map((r) => row(r, "ask")).join("") || '<div class="empty">—</div>';
+    $("bids").innerHTML = bids.map((r) => row(r, "bid")).join("") || '<div class="empty">—</div>';
+
+    const bestBid = bids[0] ? Number(bids[0][0] ?? bids[0].price) : null;
+    const bestAsk = asks.length ? Number(asks[asks.length - 1][0] ?? asks[asks.length - 1].price) : (book.asks && book.asks[0] ? Number(book.asks[0][0]) : null);
+    // asks rendered reversed; original asks[0] is best ask
+    const ba = book.asks && book.asks[0] ? Number(book.asks[0][0] ?? book.asks[0].price) : bestAsk;
+    const bb = bestBid;
+    if (ba != null && bb != null) {
+      const sp = ba - bb;
+      $("spreadLab").textContent = "spread " + fmt(sp, 2);
+      $("bookMid").textContent = fmtPx((ba + bb) / 2);
+    } else {
+      $("bookMid").textContent = fmtPx(state.lastStatus && state.lastStatus.last_price);
+    }
+  }
+
+  // --- Blotter ---
+  function renderTrades(list) {
+    const tb = $("tbTrades");
+    if (!list || !list.length) {
+      tb.innerHTML = '<tr><td colspan="7" class="empty">Aucun trade</td></tr>';
+      return;
+    }
+    tb.innerHTML = list.slice(0, 50).map((t) => {
+      const side = String(t.side || t.action || "").toUpperCase();
+      const pnl = t.pnl ?? t.profit ?? t.realized_pnl;
+      const ts = t.ts || t.time || t.closed_at || t.opened_at || "";
+      const tss = typeof ts === "number" ? new Date(ts * (ts < 1e12 ? 1000 : 1)).toLocaleString("fr-FR") : String(ts).slice(0, 19);
+      return `<tr>
+        <td>${tss}</td>
+        <td>${t.symbol || "—"}</td>
+        <td class="${side.includes("BUY") || side === "LONG" ? "up" : "dn"}">${side}</td>
+        <td>${fmt(t.qty ?? t.size ?? t.amount, 6)}</td>
+        <td>${fmtPx(t.price ?? t.avg_price ?? t.exit_price)}</td>
+        <td class="${clsPnL(pnl)}">${pnl != null ? fmt(pnl, 2) : "—"}</td>
+        <td class="muted">${t.reason || t.exit_reason || t.note || "—"}</td>
+      </tr>`;
+    }).join("");
+  }
+
+  function renderSignals(list) {
+    const tb = $("tbSignals");
+    if (!list || !list.length) {
+      tb.innerHTML = '<tr><td colspan="5" class="empty">—</td></tr>';
+      return;
+    }
+    tb.innerHTML = list.slice(0, 40).map((s) => {
+      const sig = String(s.signal || s.side || "HOLD").toUpperCase();
+      const ts = s.ts || s.time || "";
+      const tss = typeof ts === "number" ? new Date(ts * (ts < 1e12 ? 1000 : 1)).toLocaleString("fr-FR") : String(ts).slice(0, 19);
+      return `<tr>
+        <td>${tss}</td>
+        <td class="${sig === "BUY" ? "up" : sig === "SELL" ? "dn" : ""}">${sig}</td>
+        <td>${s.confidence != null ? fmt(s.confidence, 2) : "—"}</td>
+        <td>${s.regime || "—"}</td>
+        <td>${fmtPx(s.price)}</td>
+      </tr>`;
+    }).join("");
+  }
+
+  function renderManual(list) {
+    const tb = $("tbManual");
+    if (!list || !list.length) {
+      tb.innerHTML = '<tr><td colspan="5" class="empty">—</td></tr>';
+      return;
+    }
+    tb.innerHTML = list.slice(0, 30).map((m) => {
+      const side = String(m.side || "").toUpperCase();
+      const ts = m.ts || m.time || m.created_at || "";
+      const tss = typeof ts === "number" ? new Date(ts * (ts < 1e12 ? 1000 : 1)).toLocaleString("fr-FR") : String(ts).slice(0, 19);
+      return `<tr>
+        <td>${tss}</td>
+        <td class="${side === "BUY" ? "up" : "dn"}">${side}</td>
+        <td>${fmt(m.amount ?? m.qty, 2)}</td>
+        <td>${m.status || m.state || "—"}</td>
+        <td class="muted">${m.message || m.detail || m.error || "—"}</td>
+      </tr>`;
+    }).join("");
+  }
+
+  // --- API ---
+  async function jget(path) {
+    try {
+      const r = await fetch(path, { cache: "no-store" });
+      if (!r.ok) return null;
+      return await r.json();
+    } catch (e) {
+      return null;
+    }
+  }
+  async function jpost(path, body) {
+    const r = await fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body || {}),
+    });
+    const data = await r.json().catch(() => ({}));
+    return { ok: r.ok, status: r.status, data };
+  }
+
+  async function refreshAll() {
+    const st = await jget("/api/status");
+    if (st) applyStatus(st.data || st);
+
+    const book = await jget("/api/market/book");
+    if (book) {
+      const b = (book.market && book.market.book) || book.book || book.data || book;
+      renderBook(b);
+    }
+
+    const trades = await jget("/api/trades?limit=50");
+    if (trades) renderTrades(trades.trades || trades.data || trades.items || (Array.isArray(trades) ? trades : []));
+
+    const sigs = await jget("/api/signals?limit=40");
+    if (sigs) renderSignals(sigs.signals || sigs.data || (Array.isArray(sigs) ? sigs : []));
+
+    const man = await jget("/api/manual-orders?limit=30");
+    if (man) renderManual(man.orders || man.data || man.items || (Array.isArray(man) ? man : []));
+  }
+
+  // SSE
+  function connectSSE() {
+    try {
+      const es = new EventSource("/api/stream");
+      es.addEventListener("status", (ev) => {
+        try {
+          const st = JSON.parse(ev.data);
+          applyStatus(st);
+        } catch (e) {}
+      });
+      es.onerror = () => {
+        es.close();
+        setTimeout(connectSSE, 3000);
+      };
+    } catch (e) {
+      setTimeout(connectSSE, 3000);
+    }
+  }
+
+  // Controls — FIX: start/stop/paper-order are blocked by server (403, PAPER mode).
+  // Bot control must be done via the Streamlit control panel (streamlit run control_panel.py).
+  // These buttons are intentionally disabled in the web dashboard.
+  const _CONTROL_MSG = "⚠ Contrôle bot via: streamlit run control_panel.py";
+  $("btnStart").onclick = () => { $("ticketMsg").textContent = _CONTROL_MSG; };
+  $("btnStop").onclick  = () => { $("ticketMsg").textContent = _CONTROL_MSG; };
+  $("btnStart").title = "Utilisez: streamlit run control_panel.py";
+  $("btnStop").title  = "Utilisez: streamlit run control_panel.py";
+
+  async function sendPaper(side) {
+    const amount = Number($("ordAmt").value || 0);
+    if (amount < 5 || amount > 250) {
+      $("ticketMsg").textContent = "Montant entre 5 et 250 USDC";
+      return;
+    }
+    $("ticketMsg").textContent = "Envoi…";
+    // FIX: /api/paper/order is blocked (403). Use manual_paper_orders via control_panel.
+    $("ticketMsg").textContent = "⚠ Ordres paper via Streamlit control_panel uniquement (sécurité PAPER).";
+  }
+  $("btnBuy").onclick  = () => sendPaper("BUY");
+  $("btnSell").onclick = () => sendPaper("SELL");
+
+  // Tabs
+  document.querySelectorAll("#blotter-tabs button").forEach((btn) => {
+    btn.onclick = () => {
+      document.querySelectorAll("#blotter-tabs button").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const tab = btn.dataset.tab;
+      $("tblTrades").style.display = tab === "trades" ? "" : "none";
+      $("tblSignals").style.display = tab === "signals" ? "" : "none";
+      $("tblManual").style.display = tab === "manual" ? "" : "none";
+    };
+  });
+
+  // TF buttons → reload OHLC candles
+  document.querySelectorAll("#chart-toolbar .tf").forEach((el) => {
+    el.onclick = () => {
+      document.querySelectorAll("#chart-toolbar .tf").forEach((t) => t.classList.remove("active"));
+      el.classList.add("active");
+      loadCandles(el.dataset.tf);
+    };
+  });
+
+  // Boot
+  refreshAll();
+  loadCandles(state.bar);
+  connectSSE();
+  setInterval(refreshAll, 4000);
+  setInterval(() => loadCandles(state.bar), 60000);
+})();
+</script>
+</body>
+</html>
