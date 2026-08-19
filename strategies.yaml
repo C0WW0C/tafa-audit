@@ -1,0 +1,26 @@
+version: 1
+strategies:
+  - id: STRAT-TAFA-ELITE-BASE
+    name: "TAFA Elite Final — profil paper net 5"
+    version: "1.0"
+    lifecycle_status: backtested
+    execution_mode: paper_demo_only
+    instruments: [BTC-USDC]
+    exchange: OKX
+    timeframes: [5m, 15m, 1H, 4H]
+    rules:
+      entry: "Signaux de la stratégie intelligente existante, sous contrôles de risque TAFA."
+      exit: "Stop ATR, take-profit en pourcentage, signal de sortie ou fin de données."
+      session_guard: "Bloque les nouvelles entrées paper après 5 USDC nets réalisés lorsque le profil net5 est chargé."
+    assumptions:
+      capital_per_timeframe_usdc: 500
+      position_fraction: 0.15
+      fee_bps_per_side: 8
+      candles_per_timeframe: 2000
+      slippage_model: absent
+    risks:
+      - "Les fills, spreads, slippage et latence réels ne sont pas représentés."
+      - "Les timeframes 5m et 15m n’ont pas un nombre de trades suffisant dans le dernier test."
+      - "Le 4H est négatif sur le balayage ATR/TP observé."
+    related_concepts: [CONCEPT-PAPER-DEMO, CONCEPT-MTF-BACKTEST, CONCEPT-NET5, CONCEPT-ATR-STOP, CONCEPT-TP-PERCENT]
+    sources: [DOC-ELITE-VALIDATION-001, DOC-NET5-VALIDATION-001, DOC-ATR-TP-SWEEP-001]

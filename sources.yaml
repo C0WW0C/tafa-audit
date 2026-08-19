@@ -1,0 +1,71 @@
+version: 1
+captured_at: "2026-08-12T00:00:00Z"
+sources:
+  - id: SRC-USER-CONVERSATION-TAFA
+    title: "Conversation TAFA accessible dans cette session"
+    source_locator: "session://tafa-conversation-accessible"
+    owner: user
+    license_or_permission: "fourni-par-utilisateur"
+    trust_level: fourni-par-utilisateur
+    freshness_status: actuel
+    lifecycle_status: active
+    coverage_limit: "Synthèse des échanges accessibles et des livrables créés ; pas un export complet de l’historique utilisateur."
+  - id: SRC-TAFA-PROJECT
+    title: "Projet TAFA X Ultimate Elite corrigé"
+    source_locator: "project://TAFA_X_ULTIMATE_FINAL"
+    owner: user
+    license_or_permission: "fourni-par-utilisateur"
+    trust_level: fourni-par-utilisateur
+    freshness_status: actuel
+    lifecycle_status: active
+  - id: SRC-OKX-PUBLIC-HISTORY
+    title: "Bougies historiques publiques OKX"
+    source_locator: "https://www.okx.com/docs-v5/en/#rest-api-market-data-get-candlesticks-history"
+    owner: OKX
+    license_or_permission: "a-verifier-selon-les-conditions-OKX"
+    trust_level: officiel
+    freshness_status: actuel
+    lifecycle_status: active
+    market_metadata:
+      instrument: BTC-USDC
+      asset_class: crypto_spot
+      quote_currency: USDC
+      timeframes: [5m, 15m, 1H, 4H]
+      timezone: UTC
+      provider: OKX
+      data_status: bougies-fermees
+  - id: SRC-TAFA-TESTS
+    title: "Tests et scripts de validation TAFA"
+    source_locator: "project://TAFA_X_ULTIMATE_FINAL/tests"
+    owner: user
+    license_or_permission: "fourni-par-utilisateur"
+    trust_level: fourni-par-utilisateur
+    freshness_status: actuel
+    lifecycle_status: active
+  - id: SRC-PUBLIC-TRADING-BOT-RESEARCH
+    title: "Documentations publiques et recherches sur bots de trading et IA"
+    source_locator: "https://www.freqtrade.io/en/stable/"
+    owner: multiple
+    license_or_permission: "liens-publics-consultes"
+    trust_level: mixte-officiel-et-recherche
+    freshness_status: "consulté-2026-08-12"
+    lifecycle_status: active
+    coverage_limit: "Sources publiques vérifiables seulement ; ne couvre pas les contenus privés, non accessibles ou non vérifiables."
+  - id: SRC-DEEPAI-PUBLIC
+    title: "Documentation publique DeepAI"
+    source_locator: "https://deepai.org/docs"
+    owner: Deep AI, Inc.
+    license_or_permission: "documentation-publique-consultée"
+    trust_level: officiel
+    freshness_status: "consulté-2026-08-12"
+    lifecycle_status: active
+    coverage_limit: "Pages publiques DeepAI seulement ; pas de vérification de produits tiers, privés ou portant un nom similaire."
+  - id: SRC-USER-UPLOADED-TAFA-ARTIFACTS
+    title: "Artefacts TAFA fournis par l’utilisateur pour audit"
+    source_locator: "session://uploads/tafa-artifacts-2026-08-12"
+    owner: user
+    license_or_permission: "fourni-par-utilisateur"
+    trust_level: non-verifie
+    freshness_status: "reçu-2026-08-12"
+    lifecycle_status: quarantined
+    coverage_limit: "Sources analysées statiquement uniquement ; aucun script importé ou exécuté et aucun modèle sérialisé désérialisé."

@@ -1,0 +1,129 @@
+version: 1
+backtests:
+  - id: BT-ELITE-NET5-001
+    strategy_id: STRAT-TAFA-ELITE-BASE
+    status: completed
+    code_document_id: DOC-SWEEP-CODE-001
+    dataset_document_id: DOC-BACKTEST-NET5-001
+    instrument: BTC-USDC
+    exchange: OKX
+    mode: paper_demo_research
+    candle_status: confirmed_closed
+    timeframes: [5m, 15m, 1H, 4H]
+    bars_per_timeframe: 2000
+    capital_per_timeframe_usdc: 500
+    fee_bps_per_side: 8
+    slippage_model: absent
+    parameters:
+      target_take_profit_pct: 1.8
+      net_session_target_usdc: 5
+      position_fraction: 0.15
+    key_results:
+      "5m": {trades: 0, return_pct: 0.0, profit_factor: null}
+      "15m": {trades: 1, return_pct: -0.1, profit_factor: 0.0}
+      "1H": {trades: 10, return_pct: 0.01, profit_factor: 1.009}
+      "4H": {trades: 27, return_pct: -2.14, profit_factor: 0.577}
+    limitations:
+      - "Aucun timeframe n’a atteint 5 USDC nets sur cette fenêtre."
+      - "Résultats historiques non validés hors échantillon."
+  - id: BT-ATR-TP-SWEEP-001
+    strategy_id: STRAT-TAFA-ELITE-BASE
+    status: completed
+    code_document_id: DOC-SWEEP-CODE-001
+    dataset_document_id: DOC-BACKTEST-SWEEP-001
+    instrument: BTC-USDC
+    exchange: OKX
+    mode: paper_demo_research
+    candle_status: confirmed_closed
+    timeframes: [5m, 15m, 1H, 4H]
+    bars_per_timeframe: 2000
+    fee_bps_per_side: 8
+    grid:
+      atr_stop: [1.0, 1.2, 1.5, 2.0]
+      take_profit_pct: [1.4, 1.8, 2.2]
+    selections_for_oos_only:
+      - timeframe: 1H
+        atr_stop: 2.0
+        take_profit_pct: 2.2
+        net_pnl_usdc: 1.24
+        profit_factor: 1.245
+        max_drawdown_pct: 0.63
+        trades: 10
+      - timeframe: 1H
+        atr_stop: 1.2
+        take_profit_pct: 1.8
+        net_pnl_usdc: 1.07
+        profit_factor: 1.212
+        max_drawdown_pct: 0.45
+        trades: 13
+    rejected_observations:
+      - "Les combinaisons 4H sont négatives sur ce dataset."
+      - "Les 5m et 15m ne satisfont pas le minimum de dix trades."
+    limitations:
+      - "Les candidats doivent être évalués hors échantillon avant tout passage en paper prolongé."
+  - id: BT-ATR-TP-WALKFORWARD-001
+    strategy_id: STRAT-TAFA-ELITE-BASE
+    status: completed
+    code_document_id: DOC-WALKFORWARD-CODE-001
+    dataset_document_id: DOC-BACKTEST-WALKFORWARD-001
+    instrument: BTC-USDC
+    exchange: OKX
+    mode: paper_demo_research
+    candle_status: confirmed_closed
+    timeframes: [5m, 15m, 1H, 4H]
+    bars_per_timeframe: 2000
+    chronological_split: {train_bars: 1200, test_bars: 800}
+    fee_bps_per_side: 8
+    train_selection_gate:
+      min_trades: 8
+      positive_net_pnl_required: true
+      min_profit_factor: 1.0
+    test_acceptance_gate:
+      min_trades: 5
+      positive_net_pnl_required: true
+      min_profit_factor: 1.1
+      max_drawdown_pct: 2.0
+    key_results:
+      "5m": rejected_insufficient_train_evidence
+      "15m": rejected_insufficient_train_evidence
+      "1H": rejected_insufficient_train_evidence
+      "4H": rejected_insufficient_train_evidence
+    conclusion: "Aucun réglage n’est sélectionné pour paper prolongé à partir de ce protocole."
+    limitations:
+      - "Les données couvrent une seule fenêtre par timeframe et le warm-up est propre à chaque segment."
+      - "Aucune décision réelle ne découle de ce résultat."
+  - id: BT-MULTIDATASET-WALKFORWARD-001
+    strategy_id: STRAT-TAFA-ELITE-BASE
+    status: completed
+    code_document_id: DOC-MULTIDATASET-CODE-001
+    dataset_document_id: DOC-BACKTEST-MULTIDATASET-001
+    manifest_document_id: DOC-DATA-MANIFEST-001
+    instruments: [BTC-USDC, ETH-USDC, SOL-USDC]
+    exchange: OKX
+    mode: paper_demo_research
+    candle_status: confirmed_closed
+    timeframes: [5m, 15m, 1H, 4H]
+    bars_per_dataset: 2000
+    datasets_validated: 12
+    chronological_split: {train_bars: 1200, test_bars: 800}
+    fee_bps_per_side: 8
+    grid:
+      atr_stop: [1.0, 1.2, 1.5, 2.0]
+      take_profit_pct: [1.4, 1.8, 2.2]
+    result_summary:
+      accepted_for_paper_research: [SOL-USDC_1H]
+      rejected_out_of_sample: [ETH-USDC_1H, ETH-USDC_4H]
+      rejected_insufficient_train_evidence:
+        [BTC-USDC_5m, BTC-USDC_15m, BTC-USDC_1H, BTC-USDC_4H, ETH-USDC_5m, ETH-USDC_15m, SOL-USDC_5m, SOL-USDC_15m, SOL-USDC_4H]
+    paper_research_candidate:
+      instrument: SOL-USDC
+      timeframe: 1H
+      atr_stop: 2.0
+      take_profit_pct: 1.8
+      train_pnl_usdc: 9.8
+      test_pnl_usdc: 0.24
+      test_profit_factor: 1.1
+      test_max_drawdown_pct: 0.63
+    limitations:
+      - "Le candidat a une marge hors échantillon faible et reste limité à la recherche paper."
+      - "Les datasets ne couvrent pas tout l’historique Internet et ne modélisent pas le slippage ni les fills réels."

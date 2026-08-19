@@ -1,0 +1,464 @@
+version: 1
+documents:
+  - id: DOC-CONV-SCOPE-001
+    source_id: SRC-USER-CONVERSATION-TAFA
+    title: "Périmètre de session Ibhextif"
+    source_locator: "knowledge/SESSION_SCOPE.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "874a25cf2c637f75291167ab5c30eef4d0472cace1f15edf1ab75da093d273ae"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-AUDIT-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Rapport d’audit TAFA"
+    source_locator: "AUDIT_REPORT.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "5930c156acc00a59bff9b9544305f91d71e7f9aa3fbc501dddca536fee4330f7"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-COMPARISON-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Comparaison de marché TAFA"
+    source_locator: "COMPARAISON_MARCHE.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "5859309152356ebfee5d614940272764e34e410af4a1c850b8cb9267187d1f6b"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-MATURITY-ROADMAP-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Feuille de route de maturité TAFA"
+    source_locator: "FEUILLE_DE_ROUTE_MATURITE.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "c3ec3e907f7c0b1dfbe193f82ebefcf98991cce5b5da488f5f9f7ba66cff2c66"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-ELITE-VALIDATION-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Validation Elite Final"
+    source_locator: "ELITE_FINAL_VALIDATION.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "23089b71641a29ab1078a476437ce266c3571ac596388e65900d3351b19aaf28"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-NET5-VALIDATION-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Validation profil 1,8 % / 5 USDC nets"
+    source_locator: "NET5_VALIDATION.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "61f65b2d73e1e2206bf907703ca692983afa45db34a9d8259c34537cb89fd1ef"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-OPTIMIZATION-PLAN-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Plan d’optimisation de la performance nette"
+    source_locator: "PLAN_OPTIMISATION_RENTABILITE.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "702039a3635fcc6d8f2305ff6ecb3f01f2cf258f49433b03f8823c820bf9f0aa"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-ATR-TP-SWEEP-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Validation balayage ATR / take-profit"
+    source_locator: "ATR_TP_SWEEP_VALIDATION.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "1d6ad1522cb63957032bcdf26f47303ec46b2db0dedb4b5a75aa8ac1639e9971"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-BACKTEST-NET5-001
+    source_id: SRC-OKX-PUBLIC-HISTORY
+    title: "Résultat backtest multi-timeframe profil net 5"
+    source_locator: "reports/elite_net5_mtf_2000.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "844c859d0603fe44adf885c9fe7efccbb30fcdf08600c11542c5e7b1bf6320bf"
+    version: 1
+    language: en
+    status: current
+    trust_level: officiel
+  - id: DOC-BACKTEST-SWEEP-001
+    source_id: SRC-OKX-PUBLIC-HISTORY
+    title: "Résultat balayage multi-timeframe ATR / TP"
+    source_locator: "reports/atr_tp_sweep_2000.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "d3947154ae4a8016b4545725845b36845d178496297a18a82ca1e742c82f6612"
+    version: 1
+    language: en
+    status: current
+    trust_level: officiel
+  - id: DOC-SWEEP-CODE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Script de balayage ATR / TP"
+    source_locator: "scripts/sweep_atr_tp_multiframe.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "b12ab54fa5e55f8e9386acad6a1bb823fda0ab3a504b752f9f1b876f025c9df1"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-WALKFORWARD-VALIDATION-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Validation chronologique ATR / TP"
+    source_locator: "WALK_FORWARD_VALIDATION.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "d0300391f5b5fe6928a786ff95e989cd6650a2cdb3032c9f3a1c5ad31888f8fb"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-BACKTEST-WALKFORWARD-001
+    source_id: SRC-OKX-PUBLIC-HISTORY
+    title: "Résultat walk-forward multi-timeframe ATR / TP"
+    source_locator: "reports/walk_forward_atr_tp_2000.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "fffdbb591fe3f6d018bc3210dcd321612e304cefea6490754196756ed796362e"
+    version: 1
+    language: en
+    status: current
+    trust_level: officiel
+  - id: DOC-WALKFORWARD-CODE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Script de validation chronologique ATR / TP"
+    source_locator: "scripts/walk_forward_atr_tp.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "61b6d0d582a45e2906130b2215bbf25443d2d63b5d4499e9a9848f69a275e491"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DATA-MANIFEST-001
+    source_id: SRC-OKX-PUBLIC-HISTORY
+    title: "Manifeste des datasets historiques OKX"
+    source_locator: "data/market/dataset_manifest.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "7678fde9f6f8b22d441a7f4fbdcab62778637024e731a301ddd5ec23e6daaad3"
+    version: 1
+    language: en
+    status: current
+    trust_level: officiel
+  - id: DOC-MULTIDATASET-VALIDATION-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Validation Internet multi-datasets"
+    source_locator: "MULTIDATASET_VALIDATION.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "a82f7d654ae440fe9fc1682e8dfff8f37a54fe90bdd0e44a5527d4650661e9a8"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-BACKTEST-MULTIDATASET-001
+    source_id: SRC-OKX-PUBLIC-HISTORY
+    title: "Résultat walk-forward multi-actifs"
+    source_locator: "reports/multidataset_walkforward_2000.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "b69dfb45c91b3701a16bc74fc57d3c2d77cbc94533c0a33ac105b2687cae5a59"
+    version: 1
+    language: en
+    status: current
+    trust_level: officiel
+  - id: DOC-MULTIDATASET-CODE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Orchestrateur walk-forward multi-datasets"
+    source_locator: "scripts/run_multidataset_walkforward.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "7e78e0d803601c441353012ae99d9cbb1f29e2c0b42cf04087d8185a23e8dd9f"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DATA-VALIDATOR-CODE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Validateur de datasets OHLCV"
+    source_locator: "scripts/validate_market_datasets.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "dcef443cdf809b076a197ae37c0bbc47634d6c42b03e92d203569ae3ca3db7b9"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-PUBLIC-TRADING-BOT-RESEARCH-001
+    source_id: SRC-PUBLIC-TRADING-BOT-RESEARCH
+    title: "Sources publiques sur bots de trading, IA et surajustement"
+    source_locator: "PUBLIC_TRADING_BOT_RESEARCH_SOURCES.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "e93d8ec3f8e914094b1ea0cde1c42cb65a7f348711d8422b6801ea7eeef1457a"
+    version: 1
+    language: fr
+    status: current
+    trust_level: mixte-officiel-et-recherche
+  - id: DOC-TAFA-X-IA-ARCHITECTURE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Architecture IA traçable pour TAFA X Ultimate"
+    source_locator: "TAFA_X_ULTIMATE_IA_ARCHITECTURE.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "6f01114d2183b1d9724c41be3aa3c80151b6eaa9999eb961ec3b35348669d988"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-USER-SCALABILITY-PROPOSAL-001
+    source_id: SRC-USER-CONVERSATION-TAFA
+    title: "Propositions utilisateur : données, latence, MLOps et DevSecOps"
+    source_locator: "knowledge/source_material/user_scalability_proposal.txt"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "13eb74c1418946dee441512308fd9cfe0bb293bd437ba46bc505b949f47453db"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-RESEARCH-BOT-ARCH-COMP-001
+    source_id: SRC-PUBLIC-TRADING-BOT-RESEARCH
+    title: "Comparaison sourcée : persistance et modularité des bots"
+    source_locator: "RESEARCH_BOT_ARCHITECTURE_COMPARISON.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "d6e453ba9dd16c2e3d786406f7f93d77bc1340e6b9f645d6f2016c555bf4a1a8"
+    version: 1
+    language: fr
+    status: current
+    trust_level: mixte-officiel-et-recherche
+  - id: DOC-TAFA-BEST-PATH-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Chemin de consolidation TAFA X Ultimate"
+    source_locator: "TAFA_X_ULTIMATE_BEST_PATH.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "21c560cd320fd535383eb2da3a6eb10412f658410f8c5182c010509ae14e8f85"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-STORAGE-PROFILE-CODE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Contrat de profil de stockage paper/demo"
+    source_locator: "core/storage_profile.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "bf85086723e7e8d803ed7e48f70f56a3b0a7e8954f395e0eb6b08099d68349ad"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-POSTGRES-TIMESCALE-MIGRATION-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Migration cible PostgreSQL et TimescaleDB"
+    source_locator: "migrations/001_tafa_postgres_timescale.sql"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "269670151f873f2d684339fba05235d913a77978b1a2fe7d70460476dd7e8200"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DEEPAI-TRADING-BOT-RESEARCH-001
+    source_id: SRC-DEEPAI-PUBLIC
+    title: "Recherche publique DeepAI et bot de trading"
+    source_locator: "RESEARCH_DEEPAI_TRADING_BOT.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "2b851af4d3176135acd625936b6006b68f4a100546a213d2d8108bd0dc06f0f0"
+    version: 1
+    language: fr
+    status: current
+    trust_level: officiel
+  - id: DOC-EXTERNAL-TAFA-MANIFEST-001
+    source_id: SRC-USER-UPLOADED-TAFA-ARTIFACTS
+    title: "Manifeste haché des artefacts TAFA externes"
+    source_locator: "knowledge/source_material/external_tafa_artifact_manifest_20260812.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "376136e55b5cb840d1ad72639a77cb3a09a7c4e4013b253e8058ba422336cd80"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-EXTERNAL-TAFA-STATIC-AUDIT-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Audit statique des artefacts TAFA externes"
+    source_locator: "EXTERNAL_TAFA_ARTIFACTS_STATIC_AUDIT.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "08898e3bc5ce403eafc8a692721b50dce66a3a513bc954bcf9ae72eefe625e21"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-STATIC-ARTIFACT-AUDITOR-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Utilitaire d’audit passif des artefacts externes"
+    source_locator: "scripts/static_audit_received_artifacts.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "41285d828dd472db4806a65fe3cdc26fbf8bcab97aca6c2178cbe4f4802d135b"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-STATIC-ARTIFACT-AUDIT-RESULT-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Résultat machine de l’audit passif des artefacts"
+    source_locator: "reports/received_artifact_static_audit.json"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "7b27fc781773a043cfb7e9f0a8815e3f1f867ef0604cd1e618a5f764dae0d109"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-PAPER-EXECUTION-GUARDS-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Garde-fous d’exécution paper Elite"
+    source_locator: "PAPER_EXECUTION_GUARDS.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "f79e549c14d4212277735100609724dbfcee628cbd69788cb782744ca12e5f92"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-PAPER-EXECUTION-GUARD-CODE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Garde local anti-duplication et budget d’annulation paper"
+    source_locator: "core/paper_execution_guard.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "54298a9eae5d0864a9fd719ee811efe096400160727492b995192acf740bf045"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-PAPER-EXECUTION-GUARD-TESTS-001
+    source_id: SRC-TAFA-TESTS
+    title: "Tests de garde-fous d’exécution paper"
+    source_locator: "tests/test_paper_execution_guard.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "bd059a96c8944f279d7f182d2b29c708ec85b8b08cd505deefea54ca041c9353"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DEPLOYMENT-GUIDE-PAPER-DEMO-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Guide final de déploiement TAFA X Ultimate Elite paper/demo"
+    source_locator: "GUIDE_DEPLOIEMENT_PAPER_DEMO.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "bf4d6c041c7d11e0c6ed2ce84fd4c91440a54ffcf05aa1402d0928cca95faa26"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DASHBOARD-BROWSER-RESOURCE-FIX-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Correctif des ressources navigateur du dashboard"
+    source_locator: "DASHBOARD_BROWSER_RESOURCE_FIX.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "24f35f545fd918eea427df7ac26f0112db687363201b086280a275aed777f13e"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DASHBOARD-BROWSER-RESOURCE-TESTS-001
+    source_id: SRC-TAFA-TESTS
+    title: "Tests des réponses statiques dashboard"
+    source_locator: "tests/test_runtime_dashboard.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "a2ee8dfbeb14b1bfdeb8ffaeecf100be5fefbd3c64bc14a5cec1cc018a82b536"
+    version: 3
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DASHBOARD-TAB-INTERACTION-FIX-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Correctif des interactions et de la liaison API du dashboard Elite"
+    source_locator: "DASHBOARD_TAB_INTERACTION_FIX.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "99353fa7701b9df2223d03d0bbd5652c0d88e13a8ac42239c3a1f24baeea336e"
+    version: 2
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-DASHBOARD-TAB-INTERACTION-TESTS-001
+    source_id: SRC-TAFA-TESTS
+    title: "Tests du bundle et des routes de lecture dashboard"
+    source_locator: "tests/test_runtime_dashboard.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "a2ee8dfbeb14b1bfdeb8ffaeecf100be5fefbd3c64bc14a5cec1cc018a82b536"
+    version: 4
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-PAPER-MARKET-DESK-001
+    source_id: SRC-TAFA-PROJECT
+    title: "Console de marché Elite paper/demo"
+    source_locator: "PAPER_MARKET_DESK.md"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "478caa7cbd703cfa3d87de4fd54514f5fe6086bde68c830586ab28421701b086"
+    version: 1
+    language: fr
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-MANUAL-PAPER-ORDER-QUEUE-001
+    source_id: SRC-TAFA-PROJECT
+    title: "File atomique des ordres manuels paper"
+    source_locator: "core/manual_paper_orders.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "8f382da707c247b690d0e12985e44ca487de2e2429119160cffca66963f5567a"
+    version: 1
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur
+  - id: DOC-MANUAL-PAPER-CONSOLE-TESTS-001
+    source_id: SRC-TAFA-TESTS
+    title: "Tests de console paper, book public et endpoint manuel"
+    source_locator: "tests/test_manual_paper_console.py"
+    captured_at: "2026-08-12T00:00:00Z"
+    published_at: null
+    content_hash: "987afce8ae32d934ed0a487d883a518ef8c93e00f2ae3dd62e7af8eb8b876d96"
+    version: 2
+    language: en
+    status: current
+    trust_level: fourni-par-utilisateur

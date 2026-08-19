@@ -1,0 +1,38 @@
+version: 1
+concepts:
+  - id: CONCEPT-PAPER-DEMO
+    name: "Paper/demo OKX"
+    category: execution_mode
+    definition: "Mode de simulation sans ordre réel, appliqué par les launchers Elite et M7."
+    status: confirmed
+    sources: [DOC-CONV-SCOPE-001, DOC-ELITE-VALIDATION-001]
+  - id: CONCEPT-MTF-BACKTEST
+    name: "Backtest multi-timeframe indépendant"
+    category: evaluation
+    definition: "Chaque timeframe est simulé avec un capital et des métriques propres ; les P&L ne sont pas agrégés."
+    status: confirmed
+    sources: [DOC-BACKTEST-NET5-001, DOC-BACKTEST-SWEEP-001]
+  - id: CONCEPT-NET5
+    name: "Objectif net de session 5 USDC"
+    category: risk_control
+    definition: "Seuil qui bloque de nouvelles entrées paper après 5 USDC de gains réalisés nets ; ce n’est pas une garantie de gain."
+    status: confirmed
+    sources: [DOC-NET5-VALIDATION-001]
+  - id: CONCEPT-ATR-STOP
+    name: "Stop ATR"
+    category: strategy_parameter
+    definition: "Distance de stop exprimée en multiples d’ATR ; testée ici de 1,0 à 2,0."
+    status: research
+    sources: [DOC-ATR-TP-SWEEP-001]
+  - id: CONCEPT-TP-PERCENT
+    name: "Take-profit en pourcentage"
+    category: strategy_parameter
+    definition: "Objectif de sortie exprimé en pourcentage au-dessus de l’entrée ; testé ici de 1,4 % à 2,2 %."
+    status: research
+    sources: [DOC-ATR-TP-SWEEP-001]
+  - id: CONCEPT-OOS
+    name: "Validation hors échantillon"
+    category: evaluation_guardrail
+    definition: "Évaluation chronologique sur des données non utilisées pour choisir les paramètres."
+    status: confirmed
+    sources: [DOC-OPTIMIZATION-PLAN-001, DOC-ATR-TP-SWEEP-001]

@@ -1,0 +1,27 @@
+version: 1
+policy:
+  default_execution_mode: manual_on_demand
+  real_order_execution: prohibited_without_explicit_human_confirmation
+  deduplication: sha256_of_normalized_content
+  versioning: create_new_document_version_never_overwrite_silently
+  failure_handling: keep_last_valid_version_and_mark_freshness_for_review
+sources:
+  - source_id: SRC-USER-CONVERSATION-TAFA
+    cadence: "À chaque export ou ensemble d’échanges explicitement fourni."
+    change_detector: "Empreinte SHA-256 et date d’import."
+    owner: user
+    on_change: "Créer un document versionné, extraire les décisions et mettre à jour conversation_notes.yaml."
+  - source_id: SRC-TAFA-PROJECT
+    cadence: "À chaque release, correction, nouveau rapport ou modification de stratégie."
+    change_detector: "Empreinte SHA-256 des fichiers suivis."
+    owner: maintainer
+    on_change: "Versionner le document, mettre à jour strategy/backtest et revalider les relations."
+  - source_id: SRC-OKX-PUBLIC-HISTORY
+    cadence: "À chaque nouveau backtest ou collecte autorisée."
+    change_detector: "Instrument, timeframe, période, statut de fermeture des bougies et empreinte du dataset."
+    owner: maintainer
+    on_change: "Créer un nouveau backtest ; ne pas remplacer les métriques historiques existantes."
+quality_gates:
+  - "Chaque résultat de backtest référence un dataset, des frais, une fenêtre, une stratégie et un code versionné."
+  - "Toute sélection de paramètre porte le statut research tant que le test hors échantillon n’est pas documenté."
+  - "Aucune note de conversation n’est promue en fait sans source ou libellé explicite."
