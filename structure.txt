@@ -1,0 +1,544 @@
+﻿Structure du dossier
+Le numéro de série du volume est 2E45-F164
+C:.
+|   .env.elite-final-paper.example
+|   .env.elite-net5-paper.example
+|   .env.example
+|   .env.local-model-paper.example
+|   .env.paper-demo.example
+|   ARCHIVE_COMPARISON_GOD_GRID_CLEAN1.md
+|   ATR_TP_SWEEP_RUNBOOK.md
+|   ATR_TP_SWEEP_VALIDATION.md
+|   AUDIT_FUSION_CLOSED_BARS_V2.md
+|   AUDIT_REPORT.md
+|   COMMANDES_TEST.md
+|   COMPARAISON_MARCHE.md
+|   comparison_sources.md
+|   config.py
+|   control_panel.py
+|   CORRECTIF_PUBLICATION_STATUT_WINDOWS.md
+|   CORRECTIF_RESILIENCE_TLS_OKX.md
+|   CORRECTIONS.md
+|   DASHBOARD_BROWSER_RESOURCE_FIX.md
+|   DASHBOARD_IA_EQUITY_OKX.md
+|   DASHBOARD_TAB_INTERACTION_FIX.md
+|   DATA_COLLECTION_RUNBOOK.md
+|   ELITE_FINAL_RUNBOOK.md
+|   ELITE_FINAL_VALIDATION.md
+|   EXTERNAL_TAFA_ARTIFACTS_STATIC_AUDIT.md
+|   FEUILLE_DE_ROUTE_MATURITE.md
+|   FINAL_VALIDATION.md
+|   FOUNDATION_MODELS_INTEGRATION.md
+|   GUIDE_DEPLOIEMENT_PAPER_DEMO.md
+|   health_v10.py
+|   INTEGRATION_COINGECKO_REPLI.md
+|   launch_tafa.py
+|   LIAISON_BOT_DASHBOARD_FIX.md
+|   logger.py
+|   M7_PAPER_DEMO_RUNBOOK.md
+|   M7_RELEASE_NOTES.md
+|   M7_VALIDATION.md
+|   MULTIDATASET_VALIDATION.md
+|   NET5_PROFILE.md
+|   NET5_VALIDATION.md
+|   NEW_ARCHIVE_INVENTORY.md
+|   PAPER_EXECUTION_GUARDS.md
+|   PAPER_MARKET_DESK.md
+|   PLAN_OPTIMISATION_RENTABILITE.md
+|   PUBLIC_TRADING_BOT_RESEARCH_SOURCES.md
+|   pytest.ini
+|   README.md
+|   requirements-local-inference.txt
+|   requirements.txt
+|   RESEARCH_BOT_ARCHITECTURE_COMPARISON.md
+|   RESEARCH_DEEPAI_TRADING_BOT.md
+|   RUNBOOK.md
+|   run_elite_final_paper.py
+|   run_paper_demo.py
+|   run_v10.py
+|   start_v10.sh
+|   structure.txt
+|   TAFA_PAPER_DASHBOARD_AUDIT.md
+|   tafa_v7.db
+|   TAFA_X_ULTIMATE_BEST_PATH.md
+|   TAFA_X_ULTIMATE_IA_ARCHITECTURE.md
+|   todo.md
+|   TSMOM.md
+|   VALIDATION_NOTES.md
+|   VERSION
+|   WALK_FORWARD_RUNBOOK.md
+|   WALK_FORWARD_VALIDATION.md
+|   
++---.github
+|   \---workflows
+|           m7-paper-demo.yml
+|           
++---ai
+|   |   ai_brain.py
+|   |   ai_quality_gate.py
+|   |   auto_config.py
+|   |   feature_store.py
+|   |   foundation_models.py
+|   |   inference_engine.py
+|   |   model_training_pipeline.py
+|   |   model_versioning.py
+|   |   neural_parent_brain.py
+|   |   strategy_optimizer_ai.py
+|   |   training_pipeline.py
+|   |   __init__.py
+|   |   
+|   +---fusion_agents
+|   |       __init__.py
+|   |       
+|   +---memory
+|   |       __init__.py
+|   |       
+|   +---quality_gate
+|   |       __init__.py
+|   |       
+|   +---specialists
+|   |       __init__.py
+|   |       
+|   \---__pycache__
+|           foundation_models.cpython-314.pyc
+|           neural_parent_brain.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
++---backtesting
+|       backtester.py
+|       benchmark.py
+|       historical.py
+|       intelligent_backtest.py
+|       monte_carlo.py
+|       multiframe.py
+|       optimizer_engine.py
+|       performance_report.py
+|       run_historical.py
+|       walk_forward.py
+|       __init__.py
+|       
++---core
+|   |   api_logger.py
+|   |   bot_process.py
+|   |   brain_engine.py
+|   |   candles_feed.py
+|   |   circuit_breaker.py
+|   |   database.py
+|   |   engine.py
+|   |   engine_v10.py
+|   |   exception_handler.py
+|   |   health_monitor.py
+|   |   manual_paper_orders.py
+|   |   paper_execution_guard.py
+|   |   performance_analytics.py
+|   |   performance_monitor.py
+|   |   quality_gate_live.py
+|   |   risk_manager.py
+|   |   runtime_config.py
+|   |   smart_alerts.py
+|   |   sqlite_models.py
+|   |   status_bridge.py
+|   |   storage_profile.py
+|   |   system_monitor.py
+|   |   trade_journal.py
+|   |   trend_engine.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           candles_feed.cpython-314.pyc
+|           circuit_breaker.cpython-314.pyc
+|           database.cpython-314.pyc
+|           engine.cpython-314.pyc
+|           engine_v10.cpython-314.pyc
+|           manual_paper_orders.cpython-314.pyc
+|           paper_execution_guard.cpython-314.pyc
+|           performance_analytics.cpython-314.pyc
+|           performance_monitor.cpython-314.pyc
+|           quality_gate_live.cpython-314.pyc
+|           runtime_config.cpython-314.pyc
+|           smart_alerts.cpython-314.pyc
+|           status_bridge.cpython-314.pyc
+|           storage_profile.cpython-314.pyc
+|           trade_journal.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
++---data
+|   |   config.json
+|   |   journal.jsonl
+|   |   live_status.json
+|   |   loader.py
+|   |   prelearning_report.json
+|   |   runtime_config.json
+|   |   __init__.py
+|   |   
+|   +---datasets
+|   |       last_backtest_report.json
+|   |       tafa_trades.csv
+|   |       __init__.py
+|   |       
+|   +---market
+|   |       binance_BTCUSDC_15m.csv
+|   |       binance_BTCUSDC_1d.csv
+|   |       binance_BTCUSDC_1h.csv
+|   |       binance_BTCUSDC_4h.csv
+|   |       binance_BTCUSDC_5m.csv
+|   |       binance_BTCUSDT_15m.csv
+|   |       dataset_manifest.json
+|   |       okx_BTC-USDC_15m.csv
+|   |       okx_BTC-USDC_15m_2000.csv
+|   |       okx_BTC-USDC_1H_2000.csv
+|   |       okx_BTC-USDC_4H_2000.csv
+|   |       okx_BTC-USDC_5m.csv
+|   |       okx_BTC-USDC_5m_2000.csv
+|   |       okx_ETH-USDC_15m_2000.csv
+|   |       okx_ETH-USDC_1H_2000.csv
+|   |       okx_ETH-USDC_4H_2000.csv
+|   |       okx_ETH-USDC_5m_2000.csv
+|   |       okx_SOL-USDC_15m_2000.csv
+|   |       okx_SOL-USDC_1H_2000.csv
+|   |       okx_SOL-USDC_4H_2000.csv
+|   |       okx_SOL-USDC_5m_2000.csv
+|   |       __init__.py
+|   |       
+|   \---__pycache__
+|           loader.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
++---exchange
+|   |   account_manager.py
+|   |   market_data.py
+|   |   ohlcv_manager.py
+|   |   okx_client.py
+|   |   order.py
+|   |   order_router.py
+|   |   websocket.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           market_data.cpython-314.pyc
+|           okx_client.cpython-314.pyc
+|           websocket.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
++---knowledge
+|   |   AI_RESPONSE_PROTOCOL.md
+|   |   backtests.yaml
+|   |   concepts.yaml
+|   |   conversation_notes.yaml
+|   |   DATA_SOURCE_FINDINGS.md
+|   |   documents.yaml
+|   |   INDEXING_PLAN.md
+|   |   README.md
+|   |   SESSION_SCOPE.md
+|   |   sources.yaml
+|   |   strategies.yaml
+|   |   update_policy.yaml
+|   |   
+|   \---source_material
+|           external_tafa_artifact_manifest_20260812.json
+|           user_scalability_proposal.txt
+|           
++---logs
+|       .gitkeep
+|       launch_bot.log
+|       launch_panel.log
+|       launch_web.log
+|       tafa_v10.log
+|       tafa_v7_20260814.log
+|       tafa_v7_20260815.log
+|       
++---migrations
+|       001_tafa_postgres_timescale.sql
+|       
++---model_server
+|       server.py
+|       __init__.py
+|       
++---monitoring
+|   |   docker-compose.yml
+|   |   prometheus.yml
+|   |   README.md
+|   |   
+|   \---grafana
+|       +---dashboards
+|       |       tafa_v10.json
+|       |       
+|       \---provisioning
+|           +---dashboards
+|           |       dashboards.yml
+|           |       
+|           \---datasources
+|                   datasource.yml
+|                   
++---reports
+|       atr_tp_sweep_2000.csv
+|       atr_tp_sweep_2000.json
+|       audit_dataset_manifest_20260814.json
+|       audit_received_archive_static.json
+|       dashboard_tab_verification_notes.md
+|       elite_final_mtf_2000.json
+|       elite_net5_mtf_2000.json
+|       multidataset_walkforward_2000.csv
+|       multidataset_walkforward_2000.json
+|       received_artifact_static_audit.json
+|       TAFA_FULL_AUDIT_AND_FIX_2026-08-14.md
+|       TSMOM_BACKTEST_REPORT.md
+|       tsmom_multidataset_backtest.json
+|       walk_forward_atr_tp_2000.csv
+|       walk_forward_atr_tp_2000.json
+|       
++---risk
+|   |   position_sizer.py
+|   |   risk_manager.py
+|   |   sl_tp_manager.py
+|   |   trade_guard.py
+|   |   trailing_stop.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           risk_manager.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
++---scripts
+|       audit_closed_bars_smoke.py
+|       build_dashboard.sh
+|       check_local_model_consensus.py
+|       elite_final_release_gate.py
+|       fetch_okx_history.py
+|       fix_windows_shadows.py
+|       m7_release_gate.py
+|       metrics_exporter.py
+|       monitor_prod.py
+|       package_m7_release.py
+|       run_elite_final_backtest.py
+|       run_multidataset_walkforward.py
+|       run_tsmom_backtests.py
+|       self_test.py
+|       setup_local_model_server.sh
+|       smoke_trade_pipeline.py
+|       start_local_model_server.sh
+|       start_local_tafa_with_models.sh
+|       start_monitoring.sh
+|       start_prod.sh
+|       static_audit_received_artifacts.py
+|       sweep_atr_tp_multiframe.py
+|       test_okx_ws.py
+|       validate_ibhextif_knowledge.py
+|       validate_market_datasets.py
+|       validate_project.py
+|       walk_forward_atr_tp.py
+|       __init__.py
+|       
++---tests
+|       check_spectral_dashboard.js
+|       test_atr_tp_sweep.py
+|       test_coingecko_quote_fallback.py
+|       test_dashboard_ai_controls.py
+|       test_dashboard_config_feedback.py
+|       test_dashboard_launch_mode.py
+|       test_elite_final_profile.py
+|       test_foundation_models.py
+|       test_local_model_server.py
+|       test_m7_paper_demo.py
+|       test_manual_paper_console.py
+|       test_manual_paper_orders.py
+|       test_multidataset_walkforward.py
+|       test_net_target_profile.py
+|       test_neural_parent_brain.py
+|       test_okx_demo_candle_fallback.py
+|       test_okx_public_tls_resilience.py
+|       test_paper_execution_guard.py
+|       test_runtime_dashboard.py
+|       test_status_bridge.py
+|       test_storage_profile.py
+|       test_walk_forward_atr_tp.py
+|       
++---third_party
+|   \---Kronos
+|       |   .gitignore
+|       |   LICENSE
+|       |   README.md
+|       |   requirements.txt
+|       |   
+|       +---examples
+|       |   |   get_akshare_date_2024-2025_x.py
+|       |   |   get_date_new.py
+|       |   |   prediction_akshare_2024-2025.py
+|       |   |   prediction_batch_example.py
+|       |   |   prediction_cn_markets_day.py
+|       |   |   prediction_example.py
+|       |   |   prediction_new.py
+|       |   |   prediction_new_GUI.py
+|       |   |   prediction_wo_vol_example.py
+|       |   |   run_backtest_kronos.py
+|       |   |   
+|       |   \---yuce
+|       |           000021_comprehensive_analysis_report.json
+|       |           000021_optimized_prediction.png
+|       |           002354_comprehensive_analysis_report.json
+|       |           002354_optimized_prediction.png
+|       |           300207_comprehensive_analysis_report.json
+|       |           300207_optimized_prediction.png
+|       |           600580_comprehensive_analysis_report.json
+|       |           600580_optimized_prediction.png
+|       |           historical_backtest.py
+|       |           market_analysis_report.json
+|       |           
+|       +---figures
+|       |       backtest_result_example.png
+|       |       logo.png
+|       |       overview.png
+|       |       prediction_example.png
+|       |       
+|       +---finetune
+|       |   |   config.py
+|       |   |   dataset.py
+|       |   |   qlib_data_preprocess.py
+|       |   |   qlib_test.py
+|       |   |   train_predictor.py
+|       |   |   train_tokenizer.py
+|       |   |   
+|       |   \---utils
+|       |           training_utils.py
+|       |           __init__.py
+|       |           
+|       +---finetune_csv
+|       |   |   config_loader.py
+|       |   |   finetune_base_model.py
+|       |   |   finetune_tokenizer.py
+|       |   |   README.md
+|       |   |   README_CN.md
+|       |   |   train_sequential.py
+|       |   |   
+|       |   +---configs
+|       |   |       config_ali09988_candle-5min.yaml
+|       |   |       
+|       |   +---data
+|       |   |       HK_ali_09988_kline_5min_all.csv
+|       |   |       
+|       |   \---examples
+|       |           HK_ali_09988_kline_5min_all_historical_20250919_073929.png
+|       |           HK_ali_09988_kline_5min_all_historical_20250919_073944.png
+|       |           HK_ali_09988_kline_5min_all_historical_20250919_074012.png
+|       |           HK_ali_09988_kline_5min_all_historical_20250919_074042.png
+|       |           HK_ali_09988_kline_5min_all_historical_20250919_074251.png
+|       |           
+|       +---model
+|       |       kronos.py
+|       |       module.py
+|       |       __init__.py
+|       |       
+|       +---tests
+|       |   |   test_kronos_regression.py
+|       |   |   
+|       |   \---data
+|       |           generate_regression_output.py
+|       |           regression_input.csv
+|       |           regression_output_256.csv
+|       |           regression_output_512.csv
+|       |           
+|       \---webui
+|           |   app.py
+|           |   README.md
+|           |   requirements.txt
+|           |   run.py
+|           |   start.sh
+|           |   
+|           +---prediction_results
+|           |       prediction_20250826_163800.json
+|           |       prediction_20250826_164030.json
+|           |       prediction_20250826_164422.json
+|           |       prediction_20250826_170831.json
+|           |       prediction_20250826_171720.json
+|           |       prediction_20250826_171913.json
+|           |       prediction_20250826_172031.json
+|           |       prediction_20250826_172153.json
+|           |       prediction_20250826_172740.json
+|           |       prediction_20250826_173322.json
+|           |       prediction_20250826_173455.json
+|           |       prediction_20250826_174410.json
+|           |       prediction_20250826_174809.json
+|           |       prediction_20250826_175057.json
+|           |       prediction_20250826_175135.json
+|           |       prediction_20250826_175909.json
+|           |       prediction_20250826_180308.json
+|           |       prediction_20250826_180632.json
+|           |       prediction_20250826_180745.json
+|           |       prediction_20250826_180806.json
+|           |       prediction_20250826_181012.json
+|           |       prediction_20250826_181139.json
+|           |       prediction_20250826_181240.json
+|           |       prediction_20250826_181434.json
+|           |       prediction_20250826_181513.json
+|           |       prediction_20250826_181612.json
+|           |       prediction_20250826_181648.json
+|           |       prediction_20250826_181800.json
+|           |       prediction_20250826_181932.json
+|           |       
+|           \---templates
+|                   index.html
+|                   
++---trading
+|   |   dca_manager.py
+|   |   grid_engine.py
+|   |   intelligent_strategy.py
+|   |   liquidity_detector.py
+|   |   live_switch.py
+|   |   paper_trading.py
+|   |   position_manager.py
+|   |   strategy.py
+|   |   strategy_policy.py
+|   |   strategy_registry.py
+|   |   strategy_selector.py
+|   |   trade_manager.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           intelligent_strategy.cpython-314.pyc
+|           paper_trading.cpython-314.pyc
+|           strategy.cpython-314.pyc
+|           strategy_policy.cpython-314.pyc
+|           trade_manager.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
++---web
+|   |   desk.html
+|   |   foundation_models.html
+|   |   index.html
+|   |   server.py
+|   |   __init__.py
+|   |   
+|   +---assets
+|   |   |   index-B8Xy6dy_.js
+|   |   |   index-BCwbVcA5.js
+|   |   |   index-BWdDsrdL.css
+|   |   |   index-CEFxs2kn.css
+|   |   |   index-Cl3-AxsQ.js
+|   |   |   index-DFPuvzYy.js
+|   |   |   index-nosDdzeF.css
+|   |   |   index-PEPF7NH9.css
+|   |   |   
+|   |   \---tafa
+|   |           tafa-elite-mark.png
+|   |           tafa-elite-operations-field.jpg
+|   |           tafa-elite-signal-orbit.jpg
+|   |           
+|   +---dist
+|   |       tafa.css
+|   |       
+|   +---src
+|   |       input.css
+|   |       
+|   +---vendor
+|   |       chart.umd.min.js
+|   |       lightweight-charts.standalone.production.js
+|   |       
+|   \---__pycache__
+|           server.cpython-314.pyc
+|           __init__.cpython-314.pyc
+|           
+\---__pycache__
+        config.cpython-314.pyc
+        logger.cpython-314.pyc
+        run_v10.cpython-314.pyc
+        

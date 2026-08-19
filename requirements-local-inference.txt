@@ -1,0 +1,8 @@
+# Dependencies required by the local TAFA model server.
+# Kronos itself is installed from its official repository by the setup script.
+torch>=2.0.0
+pandas>=2.2.2
+einops==0.8.1
+huggingface_hub==0.33.1
+safetensors==0.6.2
+chronos-forecasting>=2.0
