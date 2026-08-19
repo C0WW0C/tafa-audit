@@ -2,6 +2,7 @@
 # TAFA V7 PRO — OKX Client (Production)
 # Public endpoints work without keys.
 # Private endpoints require DEMO/LIVE credentials.
+# ✅ FIX: Robust retry logic, timeout handling, exponential backoff
 # ============================================================
 
 from __future__ import annotations
@@ -9,6 +10,7 @@ from __future__ import annotations
 import base64
 import hmac
 import json
+import logging
 import os
 import time
 from datetime import datetime, timezone
@@ -16,16 +18,34 @@ from typing import Any, Optional
 
 import requests
 
-from logger import logger
+try:
+    from logger import logger
+except ImportError:
+    logger = logging.getLogger("OKXClient")
+    logger.addHandler(logging.StreamHandler())
 
 
 class OKXClient:
-    """OKX REST client with public + signed private API support."""
+    """OKX REST client with public + signed private API support.
+    
+    ✅ FIX: Implements exponential backoff, proper timeout handling,
+    and retry logic for both public and private endpoints.
+    """
 
     BASE_URL = "https://www.okx.com"
-    TIMEOUT = (3.05, 8)
-    PUBLIC_MAX_ATTEMPTS = 3
-    PUBLIC_RETRY_DELAY_SECONDS = 0.25
+    TIMEOUT_CONNECT = 3.05  # Connection timeout (seconds)
+    TIMEOUT_READ = 8.0      # Read timeout (seconds)
+    TIMEOUT = (TIMEOUT_CONNECT, TIMEOUT_READ)  # (connect, read) tuple
+    
+    # Public endpoint retry configuration
+    PUBLIC_MAX_ATTEMPTS = 4
+    PUBLIC_RETRY_DELAY_SECONDS = 0.5
+    PUBLIC_MAX_DELAY_SECONDS = 8.0  # Cap on exponential backoff
+    
+    # Private endpoint retry configuration (more conservative)
+    PRIVATE_MAX_ATTEMPTS = 2
+    PRIVATE_RETRY_DELAY_SECONDS = 1.0
+    PRIVATE_MAX_DELAY_SECONDS = 4.0
 
     def __init__(
         self,
@@ -40,7 +60,12 @@ class OKXClient:
         self.demo = demo
         self.session = requests.Session()
         self.session.headers.update({"Content-Type": "application/json"})
-        logger.info(f"OKX Client ready (demo={self.demo})")
+        
+        # Retry tracking (throttle repeated error logs)
+        self._public_err_logged = False
+        self._private_err_logged = False
+        
+        logger.info(f"OKX Client ready (demo={self.demo}, timeouts={self.TIMEOUT})")
 
     # ------------------------------------------------------------------
     # Auth helpers
@@ -80,58 +105,102 @@ class OKXClient:
         return bool(self.api_key and self.secret_key and self.passphrase)
 
     # ------------------------------------------------------------------
-    # HTTP
+    # HTTP + Retry Logic
     # ------------------------------------------------------------------
 
     @staticmethod
-    def _is_retryable_public_error(exc: requests.RequestException) -> bool:
-        """Retry only transient public-network failures; TLS verification stays enabled."""
+    def _is_retryable_error(exc: requests.RequestException) -> bool:
+        """Determine if an error is transient and retryable.
+        
+        ✅ FIX: Distinguish transient (network, timeout, 5xx, 429)
+        from permanent (auth, parsing) failures.
+        """
+        # Network-level transient errors
         if isinstance(
             exc,
             (
                 requests.exceptions.SSLError,
                 requests.exceptions.ConnectionError,
                 requests.exceptions.Timeout,
+                requests.exceptions.ChunkedEncodingError,
             ),
         ):
             return True
+        
+        # HTTP-level transient errors
         if isinstance(exc, requests.exceptions.HTTPError) and exc.response is not None:
-            return exc.response.status_code == 429 or exc.response.status_code >= 500
+            status = exc.response.status_code
+            # Retry on rate limit (429) and server errors (5xx)
+            return status == 429 or status >= 500
+        
         return False
 
-    def _get_public(self, path: str, params: Optional[dict] = None) -> dict:
+    def _get_public(
+        self,
+        path: str,
+        params: Optional[dict] = None,
+        max_attempts: Optional[int] = None,
+    ) -> dict:
+        """GET public market data with exponential backoff retry.
+        
+        ✅ FIX: Capped exponential backoff, proper timeout handling,
+        throttled logging on repeated errors.
+        """
         url = self.BASE_URL + path
+        max_attempts = max_attempts or self.PUBLIC_MAX_ATTEMPTS
         last_error: Optional[requests.RequestException] = None
 
-        for attempt in range(self.PUBLIC_MAX_ATTEMPTS):
+        for attempt in range(max_attempts):
             try:
-                # ``requests`` verifies TLS certificates by default. Do not
-                # disable verification to work around an interrupted handshake.
-                resp = self.session.get(url, params=params, timeout=self.TIMEOUT)
+                # TLS certificates verified by default. Do not disable
+                # verification to work around interrupted handshakes.
+                resp = self.session.get(
+                    url,
+                    params=params,
+                    timeout=self.TIMEOUT,
+                )
                 resp.raise_for_status()
                 data = resp.json()
+                
+                # Check OKX API error code
                 if str(data.get("code", "0")) != "0":
-                    logger.warning(f"OKX public error {data.get('code')}: {data.get('msg')}")
+                    logger.warning(
+                        f"OKX public error {data.get('code')}: {data.get('msg')}"
+                    )
+                
+                # Success: reset error flag and return
                 self._public_err_logged = False
                 return data
+                
             except requests.RequestException as exc:
                 last_error = exc
-                if not self._is_retryable_public_error(exc) or attempt == self.PUBLIC_MAX_ATTEMPTS - 1:
+                
+                # Non-retryable error: fail immediately
+                if not self._is_retryable_error(exc):
                     break
-                delay = self.PUBLIC_RETRY_DELAY_SECONDS * (2**attempt)
+                
+                # Last attempt: don't retry
+                if attempt == max_attempts - 1:
+                    break
+                
+                # ✅ FIX: Exponential backoff with cap (prevents infinite delays)
+                delay = min(
+                    self.PUBLIC_RETRY_DELAY_SECONDS * (2 ** attempt),
+                    self.PUBLIC_MAX_DELAY_SECONDS,
+                )
+                
                 logger.warning(
-                    "OKX public request interrupted; retry %s/%s in %.2fs: %s",
-                    attempt + 1,
-                    self.PUBLIC_MAX_ATTEMPTS - 1,
-                    delay,
-                    exc,
+                    f"OKX public {path} transient error (attempt {attempt + 1}/{max_attempts}); "
+                    f"retry in {delay:.2f}s: {type(exc).__name__}"
                 )
                 time.sleep(delay)
 
+        # All attempts exhausted
         message = str(last_error) if last_error else "unknown public request failure"
-        if not getattr(self, "_public_err_logged", False):
-            logger.error(f"OKX public request failed after retries: {message}")
+        if not self._public_err_logged:
+            logger.error(f"OKX public {path} failed after {max_attempts} attempts: {message}")
             self._public_err_logged = True
+        
         return {"code": "-1", "data": [], "msg": message}
 
     def _request_private(
@@ -139,30 +208,75 @@ class OKXClient:
         method: str,
         path: str,
         body: Optional[dict] = None,
+        max_attempts: Optional[int] = None,
     ) -> dict:
+        """POST/GET private account data with retry logic.
+        
+        ✅ FIX: Exponential backoff, proper timeout, retryable errors only.
+        Previously had NO retry logic (just try/except).
+        """
         if not self.has_credentials():
             logger.error("Private API called without credentials")
             return {"code": "-1", "data": [], "msg": "missing credentials"}
 
+        max_attempts = max_attempts or self.PRIVATE_MAX_ATTEMPTS
         body_str = json.dumps(body) if body else ""
-        headers = self._private_headers(method, path, body_str)
         url = self.BASE_URL + path
-        try:
-            resp = self.session.request(
-                method.upper(),
-                url,
-                headers=headers,
-                data=body_str if body_str else None,
-                timeout=self.TIMEOUT,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            if str(data.get("code", "0")) != "0":
-                logger.warning(f"OKX private error {data.get('code')}: {data.get('msg')}")
-            return data
-        except requests.RequestException as exc:
-            logger.error(f"OKX private request failed: {exc}")
-            return {"code": "-1", "data": [], "msg": str(exc)}
+        last_error: Optional[requests.RequestException] = None
+
+        for attempt in range(max_attempts):
+            try:
+                headers = self._private_headers(method, path, body_str)
+                resp = self.session.request(
+                    method.upper(),
+                    url,
+                    headers=headers,
+                    data=body_str if body_str else None,
+                    timeout=self.TIMEOUT,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                
+                if str(data.get("code", "0")) != "0":
+                    logger.warning(
+                        f"OKX private error {data.get('code')}: {data.get('msg')}"
+                    )
+                
+                # Success: reset error flag and return
+                self._private_err_logged = False
+                return data
+                
+            except requests.RequestException as exc:
+                last_error = exc
+                
+                # Non-retryable: fail immediately
+                if not self._is_retryable_error(exc):
+                    logger.error(f"OKX private {method} {path} non-retryable error: {exc}")
+                    break
+                
+                # Last attempt
+                if attempt == max_attempts - 1:
+                    break
+                
+                # ✅ FIX: Exponential backoff with cap
+                delay = min(
+                    self.PRIVATE_RETRY_DELAY_SECONDS * (2 ** attempt),
+                    self.PRIVATE_MAX_DELAY_SECONDS,
+                )
+                
+                logger.warning(
+                    f"OKX private {method} {path} transient error (attempt {attempt + 1}/{max_attempts}); "
+                    f"retry in {delay:.2f}s: {type(exc).__name__}"
+                )
+                time.sleep(delay)
+
+        # All attempts exhausted
+        message = str(last_error) if last_error else "unknown private request failure"
+        if not self._private_err_logged:
+            logger.error(f"OKX private {method} {path} failed after {max_attempts} attempts: {message}")
+            self._private_err_logged = True
+        
+        return {"code": "-1", "data": [], "msg": message}
 
     # ------------------------------------------------------------------
     # Public market data
@@ -183,7 +297,10 @@ class OKXClient:
     def get_order_book(self, symbol: str, depth: int = 5) -> dict:
         """Return a shallow public order book. No credentials or private routes are used."""
         depth = max(1, min(int(depth), 5))
-        data = self._get_public("/api/v5/market/books", {"instId": symbol, "sz": str(depth)})
+        data = self._get_public(
+            "/api/v5/market/books",
+            {"instId": symbol, "sz": str(depth)},
+        )
 
         def levels(rows) -> list[dict]:
             out = []
@@ -233,6 +350,7 @@ class OKXClient:
         bar: str = "15m",
         limit: int = 100,
     ) -> list[dict]:
+        """Fetch OHLCV candles with retry logic."""
         bar = self._normalize_bar(bar)
         data = self._get_public(
             "/api/v5/market/candles",
@@ -264,6 +382,7 @@ class OKXClient:
     # ------------------------------------------------------------------
 
     def get_balance(self, ccy: str = "USDC") -> float:
+        """Fetch account balance for currency with retry logic."""
         data = self._request_private("GET", "/api/v5/account/balance")
         try:
             for detail in (data.get("data") or [{}])[0].get("details") or []:
@@ -281,6 +400,7 @@ class OKXClient:
         order_type: str = "market",
         td_mode: str = "cash",
     ) -> dict:
+        """Place an order with retry logic."""
         body = {
             "instId": symbol,
             "tdMode": td_mode,
@@ -291,5 +411,6 @@ class OKXClient:
         return self._request_private("POST", "/api/v5/trade/order", body)
 
     def get_positions(self) -> list:
+        """Fetch open positions with retry logic."""
         data = self._request_private("GET", "/api/v5/account/positions")
         return data.get("data") or []
